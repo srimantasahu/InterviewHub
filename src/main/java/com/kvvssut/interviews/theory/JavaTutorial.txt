@@ -1,0 +1,214 @@
+What is Java -
+	Java is a High-level programming language. A High-level language cannot be run directly on a computer, first it has to be translated into a machine language by a program called Compiler. In Java, source code is compiled to intermediate byte code, which is then interpreted and executed by a JVM
+	Java is Object-Oriented
+	Java is a platform
+	
+The Java Virtual machine (JVM) is the virtual machine that run the Java bytecodes. The JVM doesn't understand Java source code, that's why you compile your *.java files to obtain *.class files that contain the bytecodes understandable by the JVM. It's also the entity that allows Java to be a "portable language" (write once, run anywhere).
+
+The Java Runtime Environment (JRE) provides the libraries, the Java Virtual Machine, and other components to run applets and applications written in the Java programming language. The JRE does not contain tools and utilities such as compilers or debuggers for developing applets and applications.
+
+The JDK is a superset of the JRE, and contains everything that is in the JRE, plus tools such as the compilers and debuggers necessary for developing applets and applications.
+	
+A virtual machine is a software application that simulates a computer but hides the underline OS and hardware from the programs that interact with it.
+
+Java's byte-codes are portable between platforms without recompiling.
+
+JVM -
+	In early java versions, the JVM was simply an interpreter for java byte codes. Most java programs would execute slowly because the JVM would interrupt in executing one byte code at a time. Today's JVMs typically execute byte-codes using a combination of interpretation and just-in-time (JIT) compilation.
+	JVM does garbage collection
+	JVM provides security. Things that are running inside the JVM are sand-boxed. They have the safety because the programs running inside virtual machine is flawless likely to disrupt the user OS or corrupt the data files if errors occur
+
+Java is strongly typed, types must be declared and it cannot change.
+
+Class -
+	A class is a general idea
+	A class provides blueprints for creating an Object
+	A group of related methods and data
+	
+Object - 
+	An instance of a Class
+	An object is the real thing
+	
+Classes have members - Data and Method.
+
+Control statements - 
+	Conditional - if-else, switch
+	Iterative - for, while, do-while
+	Jumping - return, break, continue
+	
+In switch, if we don't add break statements at the end of each case, then it falls through the code and executes all below it.
+
+Encapsulation -
+	Packaging of complex functionality to make it easy to use in an application
+	It helps in hiding the true nature of data and methods except what is absolutely necessary to expose
+	
+Polymorphism -
+	Ability of an object to take on many forms. 
+	The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object. 
+	Any Java object that can pass more than one IS-A test is considered to be polymorphic.
+
+Abstraction -
+	It is used to hide certain details and only show the essential features of the object. In other words, it deals with the outside view of an object (interface).
+	
+We need ways to model real relationship between things in-order to be able to reuse code.
+	
+Inheritance -
+	It is a mechanism in which one object acquires all the properties and behaviors of parent object. 
+	The idea behind inheritance in java is that you can create new classes that are built upon existing classes.
+	Classes do not stand alone, they are related
+	Inheritance is an Is-A relationship
+	All classes inherit from Object
+	
+Composition - 
+	Composition is a Has-A relationship
+	Also known as Aggregation
+
+Favour Composition - 
+	Inheritance is very difficult to maintain, especially when we make changes to a base class, those changes ripple down and cause breakage in all the sub-classes
+	Almost all inheritance can be rewritten as composition
+	
+Interface -
+	It specifies what the contract is, what the method signature looks like for some class that going to implement it
+	No default implementation details unlike inheritance
+	
+Generic -
+	A way to write code independent of type
+	Class level - House<T> type as a variable
+	Method level - public <U> void printUsingCatridge(U cartridge) type as a parameter
+	
+Type Erasure -
+	Java Generics aren't real, they are erased after being compiled and are not present in the byte code
+	Only compiler uses generic to determine whether something is wrong or right
+	We cannot check the type of a generic class used because it doesn't exist at runtime
+	
+Exception -
+	Exceptions are the basic ways to indicate there are errors and to handle that errors
+	Exceptions that are not dealt with, crash the application
+	All Exceptions inherit from a common type called Throwable
+	Checked - sub-classes of Exception (except RuntimeException), these has to be handled - IOException, SQLException
+	Unchecked - sub-classes of Error or RuntimeException (indeed a sub-class of Exception) and these need not to be handled - NullPointerException, ArrayIndexOutOfBoundsException, ArrayStoreException
+				Throwable
+					|
+		Error				Exception
+								|
+				RuntimeException	All-Checked-Exceptions
+	
+Always throw IllegalArgumentException (a RuntimeException) when the value of argument passed is not proper.
+
+Exception handling best practices -
+	Catch exception as specific as possible
+	Do not catch errors
+	Do not catch exceptions that you aren't going to do something with
+
+finally blocks are basically used to prevent resource leaking.
+	
+Collection -
+	Collection is a group of objects
+	List - ordered and sequential, can have duplicates
+	Set - no duplicates, must be able to compare
+	Queue - ordered list, designed for processing
+	
+	Map - key-value pair, key must be unique
+	
+				Collection<T>
+					  |
+		Set<T>		List<T>		Queue<T>
+		
+Enumeration - 
+	Enumeration is an exact listing of all elements of a set
+	Enumerations are used in place of string constants, when constraining input is beneficial, also can be used as a Singleton
+	Comparing enums is type safe, also it limits the input
+	Enumerations are iterable too, by using the values() method
+	Enumerations are classes, it has members as well as constructor
+	Enumeration constructors have to be private so that we can't call them from outside, otherwise we would be able to create more types
+
+Java I/O - 
+	Streams are implemented in java with "Decorator Pattern"
+	Decorator pattern achieves a single objective of dynamically adding responsibilities to any object.
+	Input/OutputStreams - these are byte level streams and they read/write bytes i.e., raw data and not characters
+	Reader/Writer - these are text/character based streams and they read/write ASCII characters 
+							 Object
+								|
+	InputStream	  OutputStream		Reader 	Writer
+	
+Serialization - 
+	To serialize an object means to convert its state to a byte stream so that the byte stream can be reverted back into a copy of the object. 
+	A Java object is serializable if its class or any of its superclasses implements either the java.io.Serializable interface or its subinterface, java.io.Externalizable.
+	
+Annotations - 
+	The basic idea behind annotation is Metadata i.e., data about the code or data about the data
+	Annotations are described in the code or structures of the code and it doesn't directly affect the code because these are not executed along with the code
+	Annotations in java are basically a data holding class i.e., a collection of data that we use to describe some code in our java class
+	Annotations can be applied to classes, fields, methods and even to single statement level e.g, @SuppressWarnings(value="deprecation")
+	Annotations are defined via the @interface annotation before the class name
+	
+Annotations are mostly used by compilers that helps it to compile the code correctly or to treat certain code that is being compiled in a certain way.
+
+Annotations help in making the code safe by enforcing contracts before the code is run e.g., @Override - gives the compiler a hint, so that it will cause an error and not compile the code if it is not actually overriding something.
+
+Certain tools use annotations to generate code (ORM), documentation (javadoc) and to find the methods intended to be tests in a testing frameworks.
+
+Annotations are also used in the actual runtime with Serialization, IoC and ORM.
+
+Reflection - 
+	Reflection is just some code that can examine itself and even change itself at runtime
+	Reflection is not efficient!
+	
+Threads - 
+	A thread is a single sequential flow of control and it takes an independent path of execution within a program
+	Threads are basically used to do background processing and parallel processing when the order of execution doesn't matter
+	Threads utilize idle CPU time
+	Threads share memory|data but Processes don't
+	
+wait() : It tells the calling thread to give up the lock and go to sleep until some other thread enters the same monitor and calls notify(). The wait() method releases the lock prior to waiting and re-acquires the lock prior to returning from the wait() method.
+synchronized( lockObject )
+{ 
+    while( ! condition )
+    { 
+        lockObject.wait();
+    }
+     
+    //take the action here;
+}
+
+notify() : It wakes up one single thread that called wait() on the same object. It should be noted that calling notify() does not actually give up a lock on a resource. It tells a waiting thread that that thread can wake up. However, the lock is not actually given up until the notifier’s synchronized block has completed. So, if a notifier calls notify() on a resource but the notifier still needs to perform 10 seconds of actions on the resource within its synchronized block, the thread that had been waiting will need to wait at least another additional 10 seconds for the notifier to release the lock on the object, even though notify() had been called.
+synchronized(lockObject) 
+{
+    //establish_the_condition;
+ 
+    lockObject.notify();
+     
+    //any additional code if needed
+}
+
+notifyAll() : It wakes up all the threads that called wait() on the same object. The highest priority thread will run first in most of the situation, though not guaranteed. Other things are same as notify() method above.
+synchronized(lockObject) 
+{
+    establish_the_condition;
+ 
+    lockObject.notifyAll();
+}
+
+								Java 8 Tutorials
+
+Lambda Expressions -
+	Lambda expressions are anonymous functions and it instantiates interfaces with single method
+	Lambda expressions can only appear in places where they will be assigned to a variable whose type is a functional interface
+	Using lambda expression doesn't give any performance benefits, it only reduces the amount of code
+	
+A Functional Interface is an interface that has a single abstract method, it includes - Runnable, Callable, Comparable, Comparator, TimerTask and etc. Prior to Java 8 they were known as "Single Abstract Method" (SAM) types.
+
+One of the most useful functional interfaces added in java 8 is Predicate interface, that has one single boolean method named test, that we can use to wrap up conditional processing.
+
+DateTime API -
+	Java 8 includes a complete new set of APIs for managing date and time values
+	The classes that holds the data are all immutable and thread-safe
+	Unlike Date API in earlier java versions, java 8 Date API uses 1 for january and 12 for December
+
+Nashorn -
+	Java 8 includes a brand new library for javascript engine named "nashorn"
+	Nashorn allows us to code in javascript instead of java using the dynamic coding capabilities javascript supports
+	It can be used from within java code files as well as command line
+	Uses jjs command in Windows command line
+	
+	

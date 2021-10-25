@@ -1,0 +1,1 @@
+{"manager":{"name":"manager","manager":{"name":"director","manager":null,"dept":"ALL"},"dept":"ECS"},"reporters":[{"name":"employee1","manager":{"name":"manager","manager":{"name":"director","manager":null,"dept":"ALL"},"dept":"ECS"}},{"name":"employee2","manager":{"name":"manager","manager":{"name":"director","manager":null,"dept":"ALL"},"dept":"ECS"}}]}

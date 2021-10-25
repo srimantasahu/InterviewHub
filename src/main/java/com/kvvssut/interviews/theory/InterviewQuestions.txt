@@ -1,0 +1,28 @@
+Difference between a JMS Queue and Topic ?
+JSON representation of a employee object with a manager object and manager having list of employees as reporters ?
+Difference between java serialization and JSON string generation ?
+Write a program using two threads to print alternate numbers from 1 to 8?
+Difference between JAX-WS and JAX-RS?
+SQL query to find first 5 employee based on highest salary?
+What happens during dynamic binding with same variables & static methods and when these are called with parent's reference?
+Can we access parent class's members from a deeply rooted inner class?
+Override equals and hashcode methods for an employee object with id and name attributes?
+
+How to create an immutable class in java?
+What is loose coupling and tight coupling?
+What is a load balancer?
+What is @Component and when it is used?
+What is JAXB?
+What is a SOAP webservice?
+How does wait and notify work in threads?
+what is the difference between wait() and wait(1000)?
+Difference between a Comparator and Comparable?
+Implementation details of ConcurrentHashMap?
+What are the Locks used in JPA?
+What are the uses of wildcards in java generics?
+What are executors and how they provide synchronization?
+In web services how can we simultaneously produces both JSON as well as XML output?
+What is the difference between shallow copy and deep copy?
+How to make a class immutable?
+
+
