@@ -53,7 +53,7 @@ public class LesserKnownNewFeatures {
 	}
 
 	private static void fileSearch() {
-		Path path = FileSystems.getDefault().getPath("src", "JavaTutorial.txt");
+		Path path = FileSystems.getDefault().getPath("src", "Java-Tutorial.txt");
 
 		String seachItem = "JVM provides security.";
 

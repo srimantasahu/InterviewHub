@@ -1,6 +1,3 @@
-package com.kvvssut.interviews.theory;
-
-public class JavaMemoryMgmt {
 
 	// JRE
 	/*
@@ -114,4 +111,3 @@ public class JavaMemoryMgmt {
 	 * place of registers.
 	 */
 
-}

@@ -1,6 +1,3 @@
-package com.kvvssut.interviews.theory;
-
-public class OOADPrinciples {
 
 	// Abstraction
 	/*
@@ -126,4 +123,3 @@ public class OOADPrinciples {
 	 * even after its creator ceases to exist is known as persistence.
 	 */
 
-}
