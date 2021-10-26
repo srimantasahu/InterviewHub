@@ -72,3 +72,17 @@ What are the Locks used in JPA?
 What are the uses of wildcards in java generics?
 What are executors and how they provide synchronization?
 What is the difference between shallow copy and deep copy?
+
+
+
+-----------------------------Real time interview Question-----------------------------
+
+dif fbetween spring boot initializer and spring boot starter
+@config vs @Component
+@Restcontroller , @path, Methodtype  @Auto
+ single tone pattern
+what are the new features/methods introduced in java 8
+Solid principle
+
+
+ 
