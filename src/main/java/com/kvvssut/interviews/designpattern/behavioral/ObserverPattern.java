@@ -40,21 +40,17 @@ public class ObserverPattern extends Observable {
 /*
  * The observer pattern is used when:
  * 
- * 1. the change of a state in one object must be reflected in another object
- * without keeping the objects tight coupled.
+ * 1. the change of a state in one object must be reflected in another object without keeping the objects tightly coupled.
  * 
- * 2. the framework we are writing needs to be enhanced in future with new
- * observers with minimal changes.
+ * 2. the framework we are writing needs to be enhanced in future with new observers with minimal changes.
  * 
  * Some Classical Examples:
  * 
- * Model View Controller Pattern - The observer pattern is used in the model
- * view controller (MVC) architectural pattern. In MVC the this pattern is used
- * to decouple the model from the view. View represents the Observer and the
- * model is the Observable object.
+ * Model View Controller Pattern - The observer pattern is used in the model view controller (MVC) architectural pattern.
+ * In MVC architecture, this pattern is used to decouple the model from the view.
+ * View represents the Observer and the model is the Observable object.
  * 
- * Event management - This is one of the domains where the Observer patterns is
- * extensively used. Swing and .Net are extensively using the Observer pattern
- * for implementing the events mechanism.
+ * Event management - This is one of the domains where the Observer patterns is extensively used.
+ * Swing and .Net are extensively using the Observer pattern for implementing the events mechanism.
  * 
  */
