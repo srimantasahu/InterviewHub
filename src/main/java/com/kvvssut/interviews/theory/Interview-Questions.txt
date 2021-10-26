@@ -52,7 +52,7 @@ Fork and join
 Kafka
 Static dir for spring boot
 
-
+pessimistic and optimistic database locks
 
 ------------------------------------------------------------------- Answered Questions -------------------------------------------------------------------
 Difference between a JMS Queue and Topic?
