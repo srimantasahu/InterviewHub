@@ -2,12 +2,9 @@
 ------------------------------------------------------------------- Pending Questions -------------------------------------------------------------------
 
 microservices database transaction rollback strategy
-caching strategies
 completable future
-mimento pattern
+memento pattern
 semaphore
-sql vs nosql database difference w.r.t. cap theorem
-event driven architecture
 
 SOLID principles in OOPS
 OOPS concepts
@@ -41,7 +38,7 @@ Mockito basics
 springboot application context vs bootstrap context
 Springboot conditional
 
-In web services how can we simultaneously produces both JSON as well as XML output?
+In web services how can we simultaneously produce both JSON and XML output?
 what is the difference between wait() and wait(1000)?
 
 Profiling heap n thread dump
@@ -53,6 +50,7 @@ Kafka
 Static dir for spring boot
 
 pessimistic and optimistic database locks
+
 
 ------------------------------------------------------------------- Answered Questions -------------------------------------------------------------------
 Difference between a JMS Queue and Topic?
@@ -83,6 +81,7 @@ dif fbetween spring boot initializer and spring boot starter
  single tone pattern
 what are the new features/methods introduced in java 8
 Solid principle
+diff between factory and abstract factory pattern
 
 
  
