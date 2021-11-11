@@ -1,87 +1,44 @@
-
-------------------------------------------------------------------- Pending Questions -------------------------------------------------------------------
-
-microservices database transaction rollback strategy
-completable future
-memento pattern
-semaphore
-
 SOLID principles in OOPS
 OOPS concepts
 ACID Principles
-Java Memory Model
-Garbage Collectors
-thread states
-G1GC
-Design Patterns
-How memory management is different in Java 8
-Default Garbage Collector
-Java 8 Interface vs Abstract class
-Functional Interface
-AOP concepts
-How to write custom annotation
-Blocking Queue
-DeQue
-Future vs Completable Future
-Completable Future Methods
-Filter vs Interceptor
-HTTP PUT vs POST vs PATCH
-Advantage/Disadvantage of Microservices
+Design Patterns - singleton, factory vs abstract factory, mimento pattern
 when to use prototype bean in your application
-how you do transaction management in your application
-how to enhance performance of a microservice
+what are the new features/methods introduced in java 8 - Functional Interface
+Java Memory Model
+Garbage Collectors - G1GC (default)
+How memory management is different in Java 8
+Java 8 Interface vs Abstract class
+thread states
+Future vs Completable Future, Completable Future Methods
+semaphore, reentrant locks, thread local, Fork and join
+sql vs nosql database difference w.r.t. cap theorem
+pessimistic and optimistic database locks
+How to write custom annotation
+Blocking Queue & DeQue
+Filter vs Interceptor
 oauth2 authentication
 HTTP Status codes
+HTTP PUT vs POST vs PATCH
 request param vs path variable
 how to version REST APIs
-Mockito basics
 springboot application context vs bootstrap context
 Springboot conditional
-
-In web services how can we simultaneously produce both JSON and XML output?
-what is the difference between wait() and wait(1000)?
-
-Profiling heap n thread dump
-Cores n Ram config
-Micro services architecture
-Gkp containers n pod
-Fork and join
-Kafka
-Static dir for spring boot
-
-pessimistic and optimistic database locks
-
-
-------------------------------------------------------------------- Answered Questions -------------------------------------------------------------------
-Difference between a JMS Queue and Topic?
-JSON representation of a employee object with a manager object and manager having list of employees as reporters?
-Override equals and hashcode methods for an employee object with id and name attributes?
-Difference between java serialization and JSON string generation?
-Write a program using two threads to print alternate numbers from 1 to 8?
-Difference between JAX-WS and JAX-RS?
-SQL query to find first 5 employee based on highest salary?
-How to create an immutable class in java?
-What is @Component and when it is used?
-What is a SOAP webservice?
-How does wait and notify work in threads?
-Difference between a Comparator and Comparable?
-Implementation details of ConcurrentHashMap?
-What are the Locks used in JPA?
-What are the uses of wildcards in java generics?
-What are executors and how they provide synchronization?
-What is the difference between shallow copy and deep copy?
-
-
-
------------------------------Real time interview Question-----------------------------
-
-dif fbetween spring boot initializer and spring boot starter
+AOP concepts
+diff between spring boot initializer and spring boot starter
 @config vs @Component
 @Restcontroller , @path, Methodtype  @Auto
- single tone pattern
-what are the new features/methods introduced in java 8
-Solid principle
-diff between factory and abstract factory pattern
-
-
- 
+Static dir for spring boot
+caching strategies
+Kafka concepts
+event driven architecture
+Micro services architecture
+Advantage/Disadvantage of Microservices
+microservices database transaction rollback strategy
+how you do transaction management in your application
+how to enhance performance of a microservice
+In web services how can we simultaneously produces both JSON as well as XML output?
+what is the difference between wait() and wait(1000)?
+Profiling heap n thread dump
+Cores n Ram config
+Gkp containers n pod
+Mockito basics

@@ -9,7 +9,7 @@ public class ObjectPoolPattern {
 	 * cloning the objects, the Object Pool pattern offer a mechanism to reuse
 	 * objects that are expensive to create.
 	 * 
-	 * Clients of an object pull "feel" like they are owners of a service
+	 * Clients of an object pool "feel" like they are owners of a service
 	 * although the service is shared among many other clients.
 	 * 
 	 * Intent
