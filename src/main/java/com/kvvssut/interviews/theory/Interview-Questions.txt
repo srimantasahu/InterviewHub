@@ -1,15 +1,14 @@
-SOLID principles in OOPS
-OOPS concepts
-ACID Principles
 Design Patterns - singleton, factory vs abstract factory, mimento pattern
+Garbage Collectors - G1GC (default)
+Java Memory Model
+Future vs Completable Future, Completable Future Methods, semaphore
+Kafka concepts
+OOPS concepts
 when to use prototype bean in your application
 what are the new features/methods introduced in java 8 - Functional Interface
-Java Memory Model
-Garbage Collectors - G1GC (default)
 How memory management is different in Java 8
 Java 8 Interface vs Abstract class
 thread states
-Future vs Completable Future, Completable Future Methods
 semaphore, reentrant locks, thread local, Fork and join
 sql vs nosql database difference w.r.t. cap theorem
 pessimistic and optimistic database locks
@@ -29,8 +28,6 @@ diff between spring boot initializer and spring boot starter
 @Restcontroller , @path, Methodtype  @Auto
 Static dir for spring boot
 caching strategies
-Kafka concepts
-event driven architecture
 Micro services architecture
 Advantage/Disadvantage of Microservices
 microservices database transaction rollback strategy
