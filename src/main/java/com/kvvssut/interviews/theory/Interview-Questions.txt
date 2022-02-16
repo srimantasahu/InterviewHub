@@ -8,7 +8,6 @@ How memory management is different in Java 8
 Java 8 Interface vs Abstract class
 semaphore, reentrant locks, thread local, Fork and join
 pessimistic and optimistic database locks
-How to write custom annotation
 Blocking Queue & DeQue
 Filter vs Interceptor
 oauth2 authentication
@@ -18,7 +17,7 @@ request param vs path variable
 how to version REST APIs
 springboot application context vs bootstrap context
 Springboot conditional
-AOP concepts
+AOP concepts + annotation to log start and end time
 diff between spring boot initializer and spring boot starter
 @config vs @Component
 @Restcontroller , @path, Methodtype  @Auto
