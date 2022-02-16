@@ -1,16 +1,12 @@
-Design Patterns - singleton, factory vs abstract factory, mimento pattern
 Garbage Collectors - G1GC (default)
 Java Memory Model
 Future vs Completable Future, Completable Future Methods, semaphore
 Kafka concepts
-OOPS concepts
 when to use prototype bean in your application
 what are the new features/methods introduced in java 8 - Functional Interface
 How memory management is different in Java 8
 Java 8 Interface vs Abstract class
-thread states
 semaphore, reentrant locks, thread local, Fork and join
-sql vs nosql database difference w.r.t. cap theorem
 pessimistic and optimistic database locks
 How to write custom annotation
 Blocking Queue & DeQue
@@ -39,3 +35,4 @@ Profiling heap n thread dump
 Cores n Ram config
 Gkp containers n pod
 Mockito basics
+gRPC workflow
