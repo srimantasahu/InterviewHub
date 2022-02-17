@@ -1,6 +1,6 @@
 Future vs Completable Future, Completable Future Methods, semaphore
 semaphore, reentrant locks, thread local, Fork and join
-pessimistic and optimistic database locks
+threadpool executors, executor service
 when to use prototype bean in your application
 Blocking Queue & DeQue
 Filter vs Interceptor
@@ -9,6 +9,7 @@ HTTP Status codes
 HTTP PUT vs POST vs PATCH
 request param vs path variable
 how to version REST APIs
+In web services how can we simultaneously produces both JSON as well as XML output?
 springboot application context vs bootstrap context
 Springboot conditional
 AOP concepts + annotation to log start and end time
@@ -22,7 +23,6 @@ Advantage/Disadvantage of Microservices
 microservices database transaction rollback strategy
 how you do transaction management in your application
 how to enhance performance of a microservice
-In web services how can we simultaneously produces both JSON as well as XML output?
 Docker & kubernetes - containers n pod
 Kafka concepts
 Mockito basics
