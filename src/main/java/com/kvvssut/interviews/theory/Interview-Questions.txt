@@ -1,10 +1,9 @@
 Garbage Collectors - G1GC (default)
 Java Memory Model
+How memory management is different in Java 8
 Future vs Completable Future, Completable Future Methods, semaphore
 Kafka concepts
 when to use prototype bean in your application
-what are the new features/methods introduced in java 8 - Functional Interface
-How memory management is different in Java 8
 Java 8 Interface vs Abstract class
 semaphore, reentrant locks, thread local, Fork and join
 pessimistic and optimistic database locks
