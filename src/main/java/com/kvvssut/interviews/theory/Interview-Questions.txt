@@ -1,12 +1,7 @@
-Garbage Collectors - G1GC (default)
-Java Memory Model
-How memory management is different in Java 8
 Future vs Completable Future, Completable Future Methods, semaphore
-Kafka concepts
-when to use prototype bean in your application
-Java 8 Interface vs Abstract class
 semaphore, reentrant locks, thread local, Fork and join
 pessimistic and optimistic database locks
+when to use prototype bean in your application
 Blocking Queue & DeQue
 Filter vs Interceptor
 oauth2 authentication
@@ -28,9 +23,7 @@ microservices database transaction rollback strategy
 how you do transaction management in your application
 how to enhance performance of a microservice
 In web services how can we simultaneously produces both JSON as well as XML output?
-what is the difference between wait() and wait(1000)?
-Profiling heap n thread dump
-Cores n Ram config
-Gkp containers n pod
+Docker & kubernetes - containers n pod
+Kafka concepts
 Mockito basics
 gRPC workflow
