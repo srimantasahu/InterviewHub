@@ -1,7 +1,11 @@
 Future vs Completable Future, Completable Future Methods, semaphore
 semaphore, reentrant locks, thread local, Fork and join
 threadpool executors, executor service
-when to use prototype bean in your application
+Micro services architecture
+Advantage/Disadvantage of Microservices
+microservices database transaction rollback strategy
+how you do transaction management in your application
+how to enhance performance of a microservice
 Blocking Queue & DeQue
 Filter vs Interceptor
 oauth2 authentication
@@ -12,17 +16,12 @@ how to version REST APIs
 In web services how can we simultaneously produces both JSON as well as XML output?
 springboot application context vs bootstrap context
 Springboot conditional
-AOP concepts + annotation to log start and end time
+Static dir for spring boot
 diff between spring boot initializer and spring boot starter
+AOP concepts + annotation to log start and end time
+when to use prototype bean in your application
 @config vs @Component
 @Restcontroller , @path, Methodtype  @Auto
-Static dir for spring boot
-caching strategies
-Micro services architecture
-Advantage/Disadvantage of Microservices
-microservices database transaction rollback strategy
-how you do transaction management in your application
-how to enhance performance of a microservice
 Docker & kubernetes - containers n pod
 Kafka concepts
 Mockito basics
