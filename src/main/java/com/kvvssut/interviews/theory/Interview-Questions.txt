@@ -1,10 +1,6 @@
 Future vs Completable Future, Completable Future Methods, semaphore
 semaphore, reentrant locks, thread local, Fork and join
 threadpool executors, executor service
-Micro services architecture
-Advantage/Disadvantage of Microservices
-microservices database transaction rollback strategy
-how you do transaction management in your application
 how to enhance performance of a microservice
 Blocking Queue & DeQue
 Filter vs Interceptor
