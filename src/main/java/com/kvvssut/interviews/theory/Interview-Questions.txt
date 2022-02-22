@@ -1,5 +1,4 @@
 semaphore, reentrant locks, thread local, Fork and join
-threadpool executors, executor service
 Blocking Queue & DeQue
 Filter vs Interceptor
 HTTP Status codes
