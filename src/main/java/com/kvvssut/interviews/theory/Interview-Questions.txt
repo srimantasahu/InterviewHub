@@ -1,10 +1,9 @@
-Future vs Completable Future, Completable Future Methods
 semaphore, reentrant locks, thread local, Fork and join
 threadpool executors, executor service
 Blocking Queue & DeQue
 Filter vs Interceptor
 HTTP Status codes
-HTTP PUT vs POST vs PATCH
+HTTP PUT vs POST vs PATCH=
 request param vs path variable
 how to version REST APIs
 In web services how can we simultaneously produces both JSON as well as XML output?
