@@ -1,10 +1,10 @@
 semaphore, reentrant locks, thread local, Fork and join
-Blocking Queue & DeQue
 Filter vs Interceptor
 HTTP Status codes
 HTTP PUT vs POST vs PATCH=
 request param vs path variable
 how to version REST APIs
+why constructor autowiring is better than member level
 In web services how can we simultaneously produces both JSON as well as XML output?
 springboot application context vs bootstrap context
 Springboot conditional
@@ -14,8 +14,11 @@ AOP concepts + annotation to log start and end time
 when to use prototype bean in your application
 @config vs @Component
 @Restcontroller , @path, Methodtype  @Auto
+what are some immutable objects used in java
 how to enhance performance of a microservice
+strategy pattern, composite pattern
 Docker & kubernetes - containers n pod
 Kafka concepts
 Mockito basics
+javascript what is a Promise?
 gRPC workflow
