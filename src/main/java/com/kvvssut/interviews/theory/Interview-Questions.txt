@@ -6,6 +6,7 @@ request param vs path variable
 how to version REST APIs
 why constructor autowiring is better than member level
 In web services how can we simultaneously produces both JSON as well as XML output?
+spring validations
 springboot application context vs bootstrap context
 Springboot conditional
 Static dir for spring boot
