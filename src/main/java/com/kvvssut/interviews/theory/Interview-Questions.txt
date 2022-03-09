@@ -23,3 +23,5 @@ Kafka concepts
 Mockito basics
 javascript what is a Promise?
 gRPC workflow
+HTTP2 flow
+TDD approach
