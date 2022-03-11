@@ -25,3 +25,5 @@ javascript what is a Promise?
 gRPC workflow
 HTTP2 flow
 TDD approach
+singleton instance volatile
+
