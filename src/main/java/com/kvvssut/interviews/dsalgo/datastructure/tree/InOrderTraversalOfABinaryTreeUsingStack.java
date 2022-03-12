@@ -4,93 +4,93 @@ import java.util.Stack;
 
 public class InOrderTraversalOfABinaryTreeUsingStack {
 
-	public static void main(String[] args) {
-		BinaryTree root = createNode(10);
-		addLeftChildNode(root, 5);
-		addLeftChildNode(root.getLeft(), 1);
-		addRightChildNode(root.getLeft(), 6);
-		addRightChildNode(root, 19);
-		addLeftChildNode(root.getRight(), 17);
-		addLeftChildNode(root.getRight().getLeft(), 15);
+    public static void main(String[] args) {
+        BinaryTree root = createNode(10);
+        addLeftChildNode(root, 5);
+        addLeftChildNode(root.getLeft(), 1);
+        addRightChildNode(root.getLeft(), 6);
+        addRightChildNode(root, 19);
+        addLeftChildNode(root.getRight(), 17);
+        addLeftChildNode(root.getRight().getLeft(), 15);
 
-		inOrderTraversalUsingStack(root);
-	}
+        inOrderTraversalUsingStack(root);
+    }
 
-	public static void inOrderTraversalUsingStack(BinaryTree root) {
-		Stack<BinaryTree> stack = new Stack<BinaryTree>();
-		BinaryTree node = root;
+    public static void inOrderTraversalUsingStack(BinaryTree root) {
+        Stack<BinaryTree> stack = new Stack<BinaryTree>();
+        BinaryTree node = root;
 
-		// first node to be visited will be the left one
-		while (node != null) {
-			stack.push(node);
-			node = node.getLeft();
-		}
+        // first node to be visited will be the left one
+        while (node != null) {
+            stack.push(node);
+            node = node.getLeft();
+        }
 
-		// traverse the tree
-		while (!stack.isEmpty()) {
-			// visit the top node
-			node = stack.pop();
-			System.out.println(node.getData() + "  ");
+        // traverse the tree
+        while (!stack.isEmpty()) {
+            // visit the top node
+            node = stack.pop();
+            System.out.println(node.getData() + "  ");
 
-			if (node.getRight() != null) {
-				node = node.getRight();
+            if (node.getRight() != null) {
+                node = node.getRight();
 
-				// the next node to be visited is the leftmost
-				while (node != null) {
-					stack.push(node);
-					node = node.getLeft();
-				}
-			}
-		}
-	}
+                // the next node to be visited is the leftmost
+                while (node != null) {
+                    stack.push(node);
+                    node = node.getLeft();
+                }
+            }
+        }
+    }
 
-	static class BinaryTree {
-		private int data;
-		private BinaryTree left, right;
+    public static BinaryTree createNode(int data) {
+        return new BinaryTree(data, null, null);
+    }
 
-		public BinaryTree(int data, BinaryTree left, BinaryTree right) {
-			this.data = data;
-			this.left = left;
-			this.right = right;
-		}
+    public static void addLeftChildNode(BinaryTree node, int data) {
+        BinaryTree newNode = createNode(data);
+        node.setLeft(newNode);
+    }
 
-		public int getData() {
-			return data;
-		}
+    public static void addRightChildNode(BinaryTree node, int data) {
+        BinaryTree newNode = createNode(data);
+        node.setRight(newNode);
+    }
 
-		public void setData(int data) {
-			this.data = data;
-		}
+    static class BinaryTree {
+        private int data;
+        private BinaryTree left, right;
 
-		public BinaryTree getLeft() {
-			return left;
-		}
+        public BinaryTree(int data, BinaryTree left, BinaryTree right) {
+            this.data = data;
+            this.left = left;
+            this.right = right;
+        }
 
-		public void setLeft(BinaryTree left) {
-			this.left = left;
-		}
+        public int getData() {
+            return data;
+        }
 
-		public BinaryTree getRight() {
-			return right;
-		}
+        public void setData(int data) {
+            this.data = data;
+        }
 
-		public void setRight(BinaryTree right) {
-			this.right = right;
-		}
-	}
+        public BinaryTree getLeft() {
+            return left;
+        }
 
-	public static BinaryTree createNode(int data) {
-		return new BinaryTree(data, null, null);
-	}
+        public void setLeft(BinaryTree left) {
+            this.left = left;
+        }
 
-	public static void addLeftChildNode(BinaryTree node, int data) {
-		BinaryTree newNode = createNode(data);
-		node.setLeft(newNode);
-	}
+        public BinaryTree getRight() {
+            return right;
+        }
 
-	public static void addRightChildNode(BinaryTree node, int data) {
-		BinaryTree newNode = createNode(data);
-		node.setRight(newNode);
-	}
+        public void setRight(BinaryTree right) {
+            this.right = right;
+        }
+    }
 
 }

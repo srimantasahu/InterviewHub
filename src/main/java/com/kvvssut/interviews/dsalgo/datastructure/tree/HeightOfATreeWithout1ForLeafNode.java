@@ -2,75 +2,75 @@ package com.kvvssut.interviews.dsalgo.datastructure.tree;
 
 public class HeightOfATreeWithout1ForLeafNode {
 
-	public static void main(String[] args) {
-		BinaryTree root = createNode(5);
-		addLeftChildNode(root, 3);
-		addLeftChildNode(root.getLeft(), 1);
-		addRightChildNode(root.getLeft(), 4);
-		addRightChildNode(root, 9);
-		addLeftChildNode(root.getRight(), 6);
+    public static void main(String[] args) {
+        BinaryTree root = createNode(5);
+        addLeftChildNode(root, 3);
+        addLeftChildNode(root.getLeft(), 1);
+        addRightChildNode(root.getLeft(), 4);
+        addRightChildNode(root, 9);
+        addLeftChildNode(root.getRight(), 6);
 
-		System.out.println(heightOfABinaryTree(root));
-	}
+        System.out.println(heightOfABinaryTree(root));
+    }
 
-	static int heightOfABinaryTree(BinaryTree root) {
-		if (root == null || isLeafNode(root)) {
-			return 0;
-		}
-		return (1 + Math.max(heightOfABinaryTree(root.getLeft()), heightOfABinaryTree(root.getRight())));
-	}
+    static int heightOfABinaryTree(BinaryTree root) {
+        if (root == null || isLeafNode(root)) {
+            return 0;
+        }
+        return (1 + Math.max(heightOfABinaryTree(root.getLeft()), heightOfABinaryTree(root.getRight())));
+    }
 
-	static boolean isLeafNode(BinaryTree node) {
-		return (node.getLeft() == null) && (node.getRight() == null);
-	}
+    static boolean isLeafNode(BinaryTree node) {
+        return (node.getLeft() == null) && (node.getRight() == null);
+    }
 
-	static class BinaryTree {
-		private int data;
-		private BinaryTree left, right;
+    public static BinaryTree createNode(int data) {
+        return new BinaryTree(data, null, null);
+    }
 
-		public BinaryTree(int data, BinaryTree left, BinaryTree right) {
-			this.data = data;
-			this.left = left;
-			this.right = right;
-		}
+    public static void addLeftChildNode(BinaryTree node, int data) {
+        BinaryTree newNode = createNode(data);
+        node.setLeft(newNode);
+    }
 
-		public int getData() {
-			return data;
-		}
+    public static void addRightChildNode(BinaryTree node, int data) {
+        BinaryTree newNode = createNode(data);
+        node.setRight(newNode);
+    }
 
-		public void setData(int data) {
-			this.data = data;
-		}
+    static class BinaryTree {
+        private int data;
+        private BinaryTree left, right;
 
-		public BinaryTree getLeft() {
-			return left;
-		}
+        public BinaryTree(int data, BinaryTree left, BinaryTree right) {
+            this.data = data;
+            this.left = left;
+            this.right = right;
+        }
 
-		public void setLeft(BinaryTree left) {
-			this.left = left;
-		}
+        public int getData() {
+            return data;
+        }
 
-		public BinaryTree getRight() {
-			return right;
-		}
+        public void setData(int data) {
+            this.data = data;
+        }
 
-		public void setRight(BinaryTree right) {
-			this.right = right;
-		}
-	}
+        public BinaryTree getLeft() {
+            return left;
+        }
 
-	public static BinaryTree createNode(int data) {
-		return new BinaryTree(data, null, null);
-	}
+        public void setLeft(BinaryTree left) {
+            this.left = left;
+        }
 
-	public static void addLeftChildNode(BinaryTree node, int data) {
-		BinaryTree newNode = createNode(data);
-		node.setLeft(newNode);
-	}
+        public BinaryTree getRight() {
+            return right;
+        }
 
-	public static void addRightChildNode(BinaryTree node, int data) {
-		BinaryTree newNode = createNode(data);
-		node.setRight(newNode);
-	}
+        public void setRight(BinaryTree right) {
+            this.right = right;
+        }
+    }
 
 }

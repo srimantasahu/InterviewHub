@@ -2,22 +2,22 @@ package com.kvvssut.interviews.java.strings;
 
 public class Strings {
 
-	public static void main(String[] args) {
-		String s1 = "ab".concat("cd");
-		String s2 = "ab" + "cd";	// + operator overloading
+    public static void main(String[] args) {
+        String s1 = "ab".concat("cd");
+        String s2 = "ab" + "cd";    // + operator overloading
 
-		/*
-		 * private final char value[];	 // The value is used for character storage.
-		 * 
-		 * private int hash;	// Cache the hash code for the string
-		 */
-		String string; 	
+        /*
+         * private final char value[];	 // The value is used for character storage.
+         *
+         * private int hash;	// Cache the hash code for the string
+         */
+        String string;
 
-		/*
-		 * char[] value;  in AbstractStringBuilder defined as StringBuilder() { super(16); }	or 	StringBuilder(String str) { super(str.length() + 16); append(str); }
-		 *  int count;	in AbstractStringBuilder counts the number of characters used.
-		 */
-		StringBuilder stringBuilder;
+        /*
+         * char[] value;  in AbstractStringBuilder defined as StringBuilder() { super(16); }	or 	StringBuilder(String str) { super(str.length() + 16); append(str); }
+         *  int count;	in AbstractStringBuilder counts the number of characters used.
+         */
+        StringBuilder stringBuilder;
 
 		/*
 		  void expandCapacity(int minimumCapacity) {	// in AbstractStringBuilder
@@ -38,11 +38,11 @@ public class Strings {
 		 	toString() returns a concatenated 
 		 */
 
-		/*
-		 * char[] value;  in AbstractStringBuilder	defined as StringBuilder() { super(16); }	or 	StringBuilder(String str) { super(str.length() + 16); append(str); }
-		 * int count;	in AbstractStringBuilder counts the number of characters used.
-		 */
-		StringBuffer stringBuffer;	// synchronized
-	}
+        /*
+         * char[] value;  in AbstractStringBuilder	defined as StringBuilder() { super(16); }	or 	StringBuilder(String str) { super(str.length() + 16); append(str); }
+         * int count;	in AbstractStringBuilder counts the number of characters used.
+         */
+        StringBuffer stringBuffer;    // synchronized
+    }
 
 }

@@ -3,13 +3,11 @@ package com.kvvssut.interviews.dsalgo.problems;
 class FloodFill {
 
     public static void main(String[] args) {
-        int[][] image = {{0,0,0}, {0,1,1}};
+        int[][] image = {{0, 0, 0}, {0, 1, 1}};
         for (int[] img : image) {
             System.out.println(img[0] + " " + img[1] + " " + img[2]);
         }
         System.out.println();
-
-
 
 
         new FloodFill().floodFill(image, 1, 1, 1);

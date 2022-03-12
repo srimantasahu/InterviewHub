@@ -2,6 +2,14 @@ package com.kvvssut.interviews.dsalgo.problems;
 
 class StockSpanner {
 
+    private int[][] priceSpan;
+    private int length;
+
+    public StockSpanner() {
+        priceSpan = new int[10000][2];
+        length = 0;
+    }
+
     public static void main(String[] args) {
         StockSpanner obj = new StockSpanner();
 
@@ -13,14 +21,6 @@ class StockSpanner {
         System.out.println(obj.next(75));
         System.out.println(obj.next(85));
 
-    }
-
-    private int[][] priceSpan;
-    private int length;
-
-    public StockSpanner() {
-        priceSpan = new int[10000][2];
-        length = 0;
     }
 
     public int next(int price) {

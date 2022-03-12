@@ -8,7 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface TargetMethod {
 
-	String targetMethod();
+    String targetMethod();
 
-	int version() default 1;
+    int version() default 1;
 }

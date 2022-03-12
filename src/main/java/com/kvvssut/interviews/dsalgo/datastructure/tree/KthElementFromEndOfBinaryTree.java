@@ -2,90 +2,90 @@ package com.kvvssut.interviews.dsalgo.datastructure.tree;
 
 public class KthElementFromEndOfBinaryTree {
 
-	public static void main(String[] args) {
-		BinaryTree root = createNode(10);
-		addLeftChildNode(root, 5);
-		addLeftChildNode(root.getLeft(), 1);
-		addRightChildNode(root.getLeft(), 6);
-		addRightChildNode(root, 19);
-		addLeftChildNode(root.getRight(), 17);
-		addLeftChildNode(root.getRight().getLeft(), 15);
+    public static void main(String[] args) {
+        BinaryTree root = createNode(10);
+        addLeftChildNode(root, 5);
+        addLeftChildNode(root.getLeft(), 1);
+        addRightChildNode(root.getLeft(), 6);
+        addRightChildNode(root, 19);
+        addLeftChildNode(root.getRight(), 17);
+        addLeftChildNode(root.getRight().getLeft(), 15);
 
-		System.out.println(getKthElementFromEndOfBinaryTree(null, root, 4, false));
-	}
+        System.out.println(getKthElementFromEndOfBinaryTree(null, root, 4, false));
+    }
 
-	private static int getKthElementFromEndOfBinaryTree(BinaryTree prev, BinaryTree node, int k, boolean reachedEnd) {
+    private static int getKthElementFromEndOfBinaryTree(BinaryTree prev, BinaryTree node, int k, boolean reachedEnd) {
 
-		if (k == 0) {
-			return node.getData();
-		}
+        if (k == 0) {
+            return node.getData();
+        }
 
-		if (node.getRight() == null && node.getLeft() == null) {
-			reachedEnd = true;
-		}
-		
-		if (reachedEnd) {
-			k--;
-		}
+        if (node.getRight() == null && node.getLeft() == null) {
+            reachedEnd = true;
+        }
 
-		if (node.getRight() != null) {
-			return getKthElementFromEndOfBinaryTree(node, node.getRight(), k, reachedEnd);
-		}
+        if (reachedEnd) {
+            k--;
+        }
 
-		if (node.getLeft() != null) {
-			return getKthElementFromEndOfBinaryTree(node, node.getLeft(), k, reachedEnd);
-		}
+        if (node.getRight() != null) {
+            return getKthElementFromEndOfBinaryTree(node, node.getRight(), k, reachedEnd);
+        }
 
-		return 0;
-	}
+        if (node.getLeft() != null) {
+            return getKthElementFromEndOfBinaryTree(node, node.getLeft(), k, reachedEnd);
+        }
 
-	static class BinaryTree {
-		private int data;
-		private BinaryTree left, right;
+        return 0;
+    }
 
-		public BinaryTree(int data, BinaryTree left, BinaryTree right) {
-			this.data = data;
-			this.left = left;
-			this.right = right;
-		}
+    public static BinaryTree createNode(int data) {
+        return new BinaryTree(data, null, null);
+    }
 
-		public int getData() {
-			return data;
-		}
+    public static void addLeftChildNode(BinaryTree node, int data) {
+        BinaryTree newNode = createNode(data);
+        node.setLeft(newNode);
+    }
 
-		public void setData(int data) {
-			this.data = data;
-		}
+    public static void addRightChildNode(BinaryTree node, int data) {
+        BinaryTree newNode = createNode(data);
+        node.setRight(newNode);
+    }
 
-		public BinaryTree getLeft() {
-			return left;
-		}
+    static class BinaryTree {
+        private int data;
+        private BinaryTree left, right;
 
-		public void setLeft(BinaryTree left) {
-			this.left = left;
-		}
+        public BinaryTree(int data, BinaryTree left, BinaryTree right) {
+            this.data = data;
+            this.left = left;
+            this.right = right;
+        }
 
-		public BinaryTree getRight() {
-			return right;
-		}
+        public int getData() {
+            return data;
+        }
 
-		public void setRight(BinaryTree right) {
-			this.right = right;
-		}
-	}
+        public void setData(int data) {
+            this.data = data;
+        }
 
-	public static BinaryTree createNode(int data) {
-		return new BinaryTree(data, null, null);
-	}
+        public BinaryTree getLeft() {
+            return left;
+        }
 
-	public static void addLeftChildNode(BinaryTree node, int data) {
-		BinaryTree newNode = createNode(data);
-		node.setLeft(newNode);
-	}
+        public void setLeft(BinaryTree left) {
+            this.left = left;
+        }
 
-	public static void addRightChildNode(BinaryTree node, int data) {
-		BinaryTree newNode = createNode(data);
-		node.setRight(newNode);
-	}
+        public BinaryTree getRight() {
+            return right;
+        }
+
+        public void setRight(BinaryTree right) {
+            this.right = right;
+        }
+    }
 
 }

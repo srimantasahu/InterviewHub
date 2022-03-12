@@ -2,74 +2,74 @@ package com.kvvssut.interviews.dsalgo.datastructure.linkedlist;
 
 public class ReverseALinkedList {
 
-	static class LinkedList {
-		private int number;
-		private LinkedList next;
+    public static void main(String[] args) {
+        LinkedList head = new LinkedList();
+        head.setNumber(10);
+        LinkedList next1 = new LinkedList();
+        next1.setNumber(20);
+        head.setNext(next1);
+        LinkedList next2 = new LinkedList();
+        next2.setNumber(30);
+        next1.setNext(next2);
+        LinkedList next3 = new LinkedList();
+        next3.setNumber(40);
+        next2.setNext(next3);
+        LinkedList next4 = new LinkedList();
+        next4.setNumber(50);
+        next3.setNext(next4);
+        next4.setNext(null);
 
-		public int getNumber() {
-			return number;
-		}
+        printLinkedList(head);
 
-		public void setNumber(int number) {
-			this.number = number;
-		}
+        System.out.println("\nReversing the linked list - \n");
+        LinkedList lastNode = reverseLinkedList(head);
 
-		public LinkedList getNext() {
-			return next;
-		}
+        System.out.println("\nPrinting the reversed linked list - \n");
+        printLinkedList(lastNode);
 
-		public void setNext(LinkedList next) {
-			this.next = next;
-		}
+    }
 
-	}
+    public static LinkedList reverseLinkedList(LinkedList head) {
+        LinkedList prev = null, current = head, next = null;
 
-	public static void main(String[] args) {
-		LinkedList head = new LinkedList();
-		head.setNumber(10);
-		LinkedList next1 = new LinkedList();
-		next1.setNumber(20);
-		head.setNext(next1);
-		LinkedList next2 = new LinkedList();
-		next2.setNumber(30);
-		next1.setNext(next2);
-		LinkedList next3 = new LinkedList();
-		next3.setNumber(40);
-		next2.setNext(next3);
-		LinkedList next4 = new LinkedList();
-		next4.setNumber(50);
-		next3.setNext(next4);
-		next4.setNext(null);
+        while (current != null) {
+            next = current.getNext();
+            current.setNext(prev);
+            prev = current;
+            current = next;
+        }
 
-		printLinkedList(head);
+        return prev;
+    }
 
-		System.out.println("\nReversing the linked list - \n");
-		LinkedList lastNode = reverseLinkedList(head);
+    public static void printLinkedList(LinkedList head) {
+        LinkedList node = head;
+        while (node != null) {
+            System.out.println(node.getNumber() + "," + node);
+            node = node.getNext();
+        }
+    }
 
-		System.out.println("\nPrinting the reversed linked list - \n");
-		printLinkedList(lastNode);
+    static class LinkedList {
+        private int number;
+        private LinkedList next;
 
-	}
+        public int getNumber() {
+            return number;
+        }
 
-	public static LinkedList reverseLinkedList(LinkedList head) {
-		LinkedList prev = null, current = head, next = null;
+        public void setNumber(int number) {
+            this.number = number;
+        }
 
-		while (current != null) {
-			next = current.getNext();
-			current.setNext(prev);
-			prev = current;
-			current = next;
-		}
+        public LinkedList getNext() {
+            return next;
+        }
 
-		return prev;
-	}
+        public void setNext(LinkedList next) {
+            this.next = next;
+        }
 
-	public static void printLinkedList(LinkedList head) {
-		LinkedList node = head;
-		while (node != null) {
-			System.out.println(node.getNumber() + "," + node);
-			node = node.getNext();
-		}
-	}
+    }
 
 }

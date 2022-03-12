@@ -3,7 +3,7 @@ package com.kvvssut.interviews.dsalgo.problems;
 class FindJudge {
 
     public static void main(String[] args) {
-        System.out.println(new FindJudge().findJudge(4, new int[][] {{1,3}, {1,4}, {2,3}, {2,4}, {4,3}}));
+        System.out.println(new FindJudge().findJudge(4, new int[][]{{1, 3}, {1, 4}, {2, 3}, {2, 4}, {4, 3}}));
     }
 
     public int findJudge(int N, int[][] trust) {
@@ -17,7 +17,7 @@ class FindJudge {
 
             for (int i = 0; i < N; i++) {
                 if (cntarr[i] == N - 1) {
-                    return i+1;
+                    return i + 1;
                 }
             }
         }

@@ -6,17 +6,17 @@ import java.io.Reader;
 
 public class CustomCapitalizationReader extends BufferedReader {
 
-	public CustomCapitalizationReader(Reader in) {
-		super(in);
-	}
+    public CustomCapitalizationReader(Reader in) {
+        super(in);
+    }
 
-	@Override
-	public String readLine() throws IOException {
-		String readText = super.readLine();
-		if (readText != null) {
-			return readText.toUpperCase();
-		}
-		return readText;
-	}
+    @Override
+    public String readLine() throws IOException {
+        String readText = super.readLine();
+        if (readText != null) {
+            return readText.toUpperCase();
+        }
+        return readText;
+    }
 
 }

@@ -3,7 +3,7 @@ package com.kvvssut.interviews.dsalgo.problems;
 class SingleNonDuplicate {
 
     public static void main(String[] args) {
-        System.out.println(new SingleNonDuplicate().singleNonDuplicate(new int[]{0,1,1,2,2,3,3,4,4}));
+        System.out.println(new SingleNonDuplicate().singleNonDuplicate(new int[]{0, 1, 1, 2, 2, 3, 3, 4, 4}));
     }
 
     public int singleNonDuplicate(int[] nums) {

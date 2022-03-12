@@ -59,7 +59,7 @@ class CousinsInATreeCousinNodes {
                 return new ParentDepth(node.val, depth);
             }
 
-            ParentDepth pd =  getParentAndDepth(node.left, ele, depth + 1);
+            ParentDepth pd = getParentAndDepth(node.left, ele, depth + 1);
             if (pd != null) {
                 return pd;
             } else {

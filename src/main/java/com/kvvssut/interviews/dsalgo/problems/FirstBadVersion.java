@@ -29,7 +29,6 @@ public class FirstBadVersion {
     }
 
 
-    
     private int getBadVersionIndexRecursion(int low, int high, int min) {
         if (low == min) {
             return min;

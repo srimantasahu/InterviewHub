@@ -6,68 +6,68 @@ import java.util.List;
 
 public class PermittingComparisionTest {
 
-	abstract class Fruit implements Comparable<Fruit> {
-		protected String name;
-		protected int size;
+    public static void main(String[] args) {
+        PermittingComparisionTest test = new PermittingComparisionTest();
 
-		protected Fruit(String name, int size) {
-			this.name = name;
-			this.size = size;
-		}
+        Apple a1 = test.new Apple(1);
+        Apple a2 = test.new Apple(2);
 
-		public boolean equals(Object o) {
-			if (o instanceof Fruit) {
-				Fruit that = (Fruit) o;
-				return this.name.equals(that.name) && this.size == that.size;
-			}
-			return false;
-		}
+        Orange o3 = test.new Orange(3);
+        Orange o4 = test.new Orange(4);
 
-		public int hash() {
-			return name.hashCode() * 29 + size;
-		}
+        List<Apple> apples = Arrays.asList(a1, a2);
+        assert Collections.max(apples).equals(a2);
+        System.out.println(Collections.max(apples));
 
-		public String toString() {
-			return name + " : " + size;
-		}
+        List<Orange> oranges = Arrays.asList(o3, o4);
+        assert Collections.max(oranges).equals(o4);
+        System.out.println(Collections.max(oranges));
 
-		public int compareTo(Fruit that) {
-			return this.size < that.size ? -1 : this.size == that.size ? 0 : 1;
-		}
-	}
+        List<Fruit> mixed = Arrays.<Fruit>asList(a1, o3);
+        assert Collections.max(mixed).equals(o3); // OK
+        System.out.println(Collections.max(mixed));
+    }
 
-	class Apple extends Fruit {
-		public Apple(int size) {
-			super("Apple", size);
-		}
-	}
+    abstract class Fruit implements Comparable<Fruit> {
+        protected String name;
+        protected int size;
 
-	class Orange extends Fruit {
-		public Orange(int size) {
-			super("Orange", size);
-		}
-	}
+        protected Fruit(String name, int size) {
+            this.name = name;
+            this.size = size;
+        }
 
-	public static void main(String[] args) {
-		PermittingComparisionTest test = new PermittingComparisionTest();
+        public boolean equals(Object o) {
+            if (o instanceof Fruit) {
+                Fruit that = (Fruit) o;
+                return this.name.equals(that.name) && this.size == that.size;
+            }
+            return false;
+        }
 
-		Apple a1 = test.new Apple(1);
-		Apple a2 = test.new Apple(2);
+        public int hash() {
+            return name.hashCode() * 29 + size;
+        }
 
-		Orange o3 = test.new Orange(3);
-		Orange o4 = test.new Orange(4);
+        public String toString() {
+            return name + " : " + size;
+        }
 
-		List<Apple> apples = Arrays.asList(a1, a2);
-		assert Collections.max(apples).equals(a2);
-		System.out.println(Collections.max(apples));
+        public int compareTo(Fruit that) {
+            return this.size < that.size ? -1 : this.size == that.size ? 0 : 1;
+        }
+    }
 
-		List<Orange> oranges = Arrays.asList(o3, o4);
-		assert Collections.max(oranges).equals(o4);
-		System.out.println(Collections.max(oranges));
+    class Apple extends Fruit {
+        public Apple(int size) {
+            super("Apple", size);
+        }
+    }
 
-		List<Fruit> mixed = Arrays.<Fruit> asList(a1, o3);
-		assert Collections.max(mixed).equals(o3); // OK
-		System.out.println(Collections.max(mixed));
-	}
+    class Orange extends Fruit {
+        public Orange(int size) {
+            super("Orange", size);
+        }
+    }
 
 }

@@ -3,91 +3,91 @@ package com.kvvssut.interviews.dsalgo.datastructure.tree;
 import java.util.Stack;
 
 public class IterativeSearchElementInBinaryTree {
-	
-	static class BinaryTree {
-		private int data;
-		private BinaryTree left, right;
 
-		public BinaryTree(int data) {
-			this.data = data;
-		}
+    public static void main(String[] args) {
+        final BinaryTree root = new BinaryTree(1);
+        final BinaryTree l1 = new BinaryTree(2);
+        final BinaryTree r1 = new BinaryTree(3);
+        final BinaryTree ll2 = new BinaryTree(4);
+        final BinaryTree lr2 = new BinaryTree(5);
+        final BinaryTree rl2 = new BinaryTree(6);
+        final BinaryTree rr2 = new BinaryTree(7);
 
-		public int getData() {
-			return data;
-		}
+        root.setLeft(l1);
+        root.setRight(r1);
+        l1.setLeft(ll2);
+        l1.setRight(lr2);
+        r1.setLeft(rl2);
+        r1.setRight(rr2);
 
-		public void setData(int data) {
-			this.data = data;
-		}
+        final boolean maxValue = findElement(root, 5);
 
-		public BinaryTree getLeft() {
-			return left;
-		}
+        System.out.println(maxValue);
+    }
 
-		public void setLeft(BinaryTree left) {
-			this.left = left;
-		}
+    // https://www.geeksforgeeks.org/iterative-search-for-a-key-x-in-binary-tree/
+    private static boolean findElement(BinaryTree root, int searchVal) {
+        boolean found = false;
 
-		public BinaryTree getRight() {
-			return right;
-		}
+        if (root != null) {
+            final Stack<BinaryTree> stack = new Stack<>();
 
-		public void setRight(BinaryTree right) {
-			this.right = right;
-		}
-		
-	}
+            BinaryTree currentNode = root;
+            stack.push(currentNode);
 
-	public static void main(String[] args) {
-		final BinaryTree root = new BinaryTree(1);
-		final BinaryTree l1 = new BinaryTree(2);
-		final BinaryTree r1 = new BinaryTree(3);
-		final BinaryTree ll2 = new BinaryTree(4);
-		final BinaryTree lr2 = new BinaryTree(5);
-		final BinaryTree rl2 = new BinaryTree(6);
-		final BinaryTree rr2 = new BinaryTree(7);
+            while (!stack.isEmpty()) {
+                currentNode = stack.pop();
 
-		root.setLeft(l1);
-		root.setRight(r1);
-		l1.setLeft(ll2);
-		l1.setRight(lr2);
-		r1.setLeft(rl2);
-		r1.setRight(rr2);
+                if (currentNode.getData() == searchVal) {
+                    found = true;
+                    break;
+                }
 
-		final boolean maxValue = findElement(root, 5);
+                if (currentNode.getRight() != null) {
+                    stack.push(currentNode.getRight());
+                }
 
-		System.out.println(maxValue);
-	}
+                if (currentNode.getLeft() != null) {
+                    stack.push(currentNode.getLeft());
+                }
+            }
+        }
 
-	// https://www.geeksforgeeks.org/iterative-search-for-a-key-x-in-binary-tree/
-	private static boolean findElement(BinaryTree root, int searchVal) {
-		boolean found = false;
+        return found;
+    }
 
-		if (root != null) {
-			final Stack<BinaryTree> stack = new Stack<>();
+    static class BinaryTree {
+        private int data;
+        private BinaryTree left, right;
 
-			BinaryTree currentNode = root;
-			stack.push(currentNode);
+        public BinaryTree(int data) {
+            this.data = data;
+        }
 
-			while (!stack.isEmpty()) {
-				currentNode = stack.pop();
+        public int getData() {
+            return data;
+        }
 
-				if (currentNode.getData() == searchVal) {
-					found = true;
-					break;
-				}
+        public void setData(int data) {
+            this.data = data;
+        }
 
-				if (currentNode.getRight() != null) {
-					stack.push(currentNode.getRight());
-				}
+        public BinaryTree getLeft() {
+            return left;
+        }
 
-				if (currentNode.getLeft() != null) {
-					stack.push(currentNode.getLeft());
-				}
-			}
-		}
+        public void setLeft(BinaryTree left) {
+            this.left = left;
+        }
 
-		return found;
-	}
+        public BinaryTree getRight() {
+            return right;
+        }
+
+        public void setRight(BinaryTree right) {
+            this.right = right;
+        }
+
+    }
 
 }

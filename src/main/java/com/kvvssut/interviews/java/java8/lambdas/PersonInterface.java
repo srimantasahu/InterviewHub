@@ -2,20 +2,20 @@ package com.kvvssut.interviews.java.java8.lambdas;
 
 public interface PersonInterface {
 
-	String getName();
+    static String getPersonInfo(PersonInfo p) {
+        return "Name is : " + p.getName() + ", Age is : " + p.getAge();
+    }
 
-	void setName(String name);
+    String getName();
 
-	int getAge();
+    void setName(String name);
 
-	void setAge(int age);
+    int getAge();
 
-	default String getPersonInfo() {
-		return "Name is : " + getName() + ", Age is : " + getAge();
-	}
+    void setAge(int age);
 
-	static String getPersonInfo(PersonInfo p) {
-		return "Name is : " + p.getName() + ", Age is : " + p.getAge();
-	}
+    default String getPersonInfo() {
+        return "Name is : " + getName() + ", Age is : " + getAge();
+    }
 
 }
