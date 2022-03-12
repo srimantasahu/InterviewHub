@@ -4,6 +4,9 @@ import com.kvvssut.interviews.problemsolving.ListNode;
 
 /*
     Given the head of a singly linked list, return true if it is a palindrome.
+
+    Input: head = [1,2,2,1]
+    Output: true
 */
 
 public class LinkedList_Palindrome {
