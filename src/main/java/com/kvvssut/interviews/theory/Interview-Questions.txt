@@ -1,11 +1,7 @@
 semaphore, reentrant locks, thread local, Fork and join
-Filter vs Interceptor
-HTTP Status codes
-HTTP PUT vs POST vs PATCH=
-request param vs path variable
-how to version REST APIs
+singleton instance volatile
 why constructor autowiring is better than member level
-In web services how can we simultaneously produces both JSON as well as XML output?
+what are some immutable objects used in java
 spring validations
 springboot application context vs bootstrap context
 Springboot conditional
@@ -15,15 +11,17 @@ AOP concepts + annotation to log start and end time
 when to use prototype bean in your application
 @config vs @Component
 @Restcontroller , @path, Methodtype  @Auto
-what are some immutable objects used in java
+Filter vs Interceptor
+HTTP Status codes
+HTTP PUT vs POST vs PATCH=
+request param vs path variable
+how to version REST APIs
+In web services how can we simultaneously produces both JSON as well as XML output?
 how to enhance performance of a microservice
 strategy pattern, composite pattern
 Docker & kubernetes - containers n pod
 Kafka concepts
-Mockito basics
 javascript what is a Promise?
 gRPC workflow
 HTTP2 flow
-TDD approach
-singleton instance volatile
 
