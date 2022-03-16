@@ -2,7 +2,6 @@ semaphore, reentrant locks, thread local, Fork and join
 JIT Compiler
 Docker & kubernetes - containers n pod
 Kafka concepts
-singleton instance volatile
 Filter vs Interceptor
 how to version REST APIs
 In web services how can we simultaneously produces both JSON as well as XML output?
