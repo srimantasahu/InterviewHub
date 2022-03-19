@@ -2,7 +2,6 @@ semaphore, reentrant locks, thread local, Fork and join
 Docker & kubernetes - containers n pod
 Kafka concepts
 event sourcing
-sharding
 consistent hashing
 TCP vs UDP
 Filter vs Interceptor
