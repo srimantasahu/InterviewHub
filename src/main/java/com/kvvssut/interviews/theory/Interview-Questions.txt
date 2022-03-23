@@ -1,8 +1,8 @@
 semaphore, reentrant locks, thread local, Fork and join
+Advanced producer - consumer problem with Reentrant lock for partitions
 Docker & kubernetes - containers n pod
 Kafka concepts
 event sourcing
-consistent hashing
 TCP vs UDP
 Filter vs Interceptor
 how to version REST APIs
@@ -10,3 +10,4 @@ In web services how can we simultaneously produce both JSON and XML output?
 javascript what is a Promise?
 gRPC workflow
 HTTP2 flow
+Protobuf messages
