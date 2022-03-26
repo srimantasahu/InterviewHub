@@ -1,5 +1,4 @@
-semaphore, reentrant locks, thread local, Fork and join
-Advanced producer - consumer problem with Reentrant lock for partitions
+semaphore, thread local, Fork and join, latch, mutex
 Docker & kubernetes - containers n pod
 Kafka concepts
 event sourcing
@@ -11,3 +10,9 @@ javascript what is a Promise?
 gRPC workflow
 HTTP2 flow
 Protobuf messages
+how builder is different than factory pattern
+how to delete and avoid concurrentmodificationexception in a map
+what are clustered indexes in database
+copyOnWriteList
+diff between ArrayList and LinkedList
+different ways to create Threads
