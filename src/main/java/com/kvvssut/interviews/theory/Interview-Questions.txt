@@ -1,4 +1,3 @@
-semaphore, thread local, Fork and join, latch, mutex
 Docker & kubernetes - containers n pod
 Kafka concepts
 event sourcing
@@ -11,8 +10,15 @@ gRPC workflow
 HTTP2 flow
 Protobuf messages
 how builder is different than factory pattern
-how to delete and avoid concurrentmodificationexception in a map
+atomicinteger impl
 what are clustered indexes in database
-copyOnWriteList
-diff between ArrayList and LinkedList
-different ways to create Threads
+semaphore, thread local, Fork and join, latch, mutex
+
+how to run three different threads sequentially
+few nodes failing in cloud infra structure - how to figure out the issue
+fifo impl with O(1) lookup
+cache implementation - with eviction
+video streaming at scale - high level design
+PriorityQueue for min/max heap
+CDN to avoid Ddos attack
+
