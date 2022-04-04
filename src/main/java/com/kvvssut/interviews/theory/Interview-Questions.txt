@@ -9,10 +9,8 @@ javascript what is a Promise?
 gRPC workflow
 HTTP2 flow
 Protobuf messages
-how builder is different than factory pattern
-atomicinteger impl
 what are clustered indexes in database
-semaphore, thread local, Fork and join, latch, mutex
+semaphore, thread local, Fork and join, latch, mutex, LockSupport.park, Phaser
 
 how to run three different threads sequentially
 few nodes failing in cloud infra structure - how to figure out the issue
@@ -21,4 +19,15 @@ cache implementation - with eviction
 video streaming at scale - high level design
 PriorityQueue for min/max heap
 CDN to avoid Ddos attack
+
+what are web tokens
+
+kafka streams
+
+FairLock acquire and release
+
+RateLmiter.throttle
+
+coalesing ring buffer
+
 
