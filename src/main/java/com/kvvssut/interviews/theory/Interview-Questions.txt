@@ -20,7 +20,18 @@ video streaming at scale - high level design
 PriorityQueue for min/max heap
 CDN to avoid Ddos attack
 
-what are web tokens
+why string immutable
+java8 method referencing types
+java8 stream vs parallelstraam - underlying fork and join pool
+
+diff between Runnable and Callable
+
+base64 and sha encoding
+
+generic design implementations
+
+HLD and LLD designs
+
 
 kafka streams
 
