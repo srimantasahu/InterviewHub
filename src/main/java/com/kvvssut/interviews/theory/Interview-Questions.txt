@@ -1,6 +1,6 @@
 Docker & kubernetes - containers n pod
-Kafka concepts
-event sourcing
+Kafka concepts & kafka streams
+event sourcing - state, event and routing rules and workflow specs
 TCP vs UDP
 Filter vs Interceptor
 how to version REST APIs
@@ -8,37 +8,28 @@ In web services how can we simultaneously produce both JSON and XML output?
 javascript what is a Promise?
 gRPC workflow
 HTTP2 flow
-Protobuf messages
+Protobuf messages - vs json/xml
 what are clustered indexes in database
-semaphore, thread local, Fork and join, latch, mutex, LockSupport.park, Phaser
-
-how to run three different threads sequentially
+semaphore, thread local, Fork and join, latch, mutex, LockSupport.park, Phaser, FairLock acquire and release, RateLmiter.throttle
 few nodes failing in cloud infra structure - how to figure out the issue
 fifo impl with O(1) lookup
 cache implementation - with eviction
 video streaming at scale - high level design
 PriorityQueue for min/max heap
 CDN to avoid Ddos attack
-
 why string immutable
 java8 method referencing types
-java8 stream vs parallelstraam - underlying fork and join pool
-
+java8 stream vs parallel stream - underlying fork and join pool
 diff between Runnable and Callable
-
 base64 and sha encoding
-
-generic design implementations
-
+generics design implementations
 HLD and LLD designs
-
-
-kafka streams
-
-FairLock acquire and release
-
-RateLmiter.throttle
-
 coalesing ring buffer
-
-
+FIX API
+Cucumber tests and step definition
+HAClient server chooser and authenticator for reconnection
+Certificates handling and jks
+Resource & Client authentication n authorization
+AMPS messaging - WrapperMessage, Json and AMPS Authentication
+HTTPS - SSL certificates for tcps
+Java 11 and 17 features

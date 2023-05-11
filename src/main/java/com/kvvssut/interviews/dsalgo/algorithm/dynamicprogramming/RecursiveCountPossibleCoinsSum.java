@@ -21,7 +21,7 @@ public class RecursiveCountPossibleCoinsSum {
             return 0;
         }
 
-        if (coins <= 0 && sum >= 1) {
+        if (coins <= 0) {
             return 0;
         }
 
