@@ -1,3 +1,11 @@
+Cucumber tests and step definition
+HAClient server chooser and authenticator for reconnection
+Certificates handling and jks
+Resource & Client authentication n authorization
+AMPS messaging - WrapperMessage, Json and AMPS Authentication
+HTTPS - SSL certificates for tcps
+Spring - Conditional initialization of bean - @Conditional on property
+Java 11 and 17 features
 Docker & kubernetes - containers n pod
 Kafka concepts & kafka streams
 event sourcing - state, event and routing rules and workflow specs
@@ -25,11 +33,3 @@ base64 and sha encoding
 generics design implementations
 HLD and LLD designs
 coalesing ring buffer
-FIX API
-Cucumber tests and step definition
-HAClient server chooser and authenticator for reconnection
-Certificates handling and jks
-Resource & Client authentication n authorization
-AMPS messaging - WrapperMessage, Json and AMPS Authentication
-HTTPS - SSL certificates for tcps
-Java 11 and 17 features
