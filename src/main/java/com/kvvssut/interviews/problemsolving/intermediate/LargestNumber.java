@@ -17,24 +17,15 @@ public class LargestNumber {
     }
 
     public String largestNumber(int[] nums) {
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != 0) {
-                break;
-            }
-            if (i == nums.length - 1) {
-                return "0";
-            }
-        }
-
-        List<Integer> numsList = Arrays.stream(nums).boxed().collect(Collectors.toList());
-        numsList.sort((n1, n2) -> (n2 + "" + n1).compareTo(n1 + "" + n2));
+        List<String> numsList = Arrays.stream(nums).mapToObj(String::valueOf)
+                                .sorted((n1, n2) -> (n2 + n1).compareTo(n1 + n2)).collect(Collectors.toList());
 
         StringBuilder result = new StringBuilder();
-        for (int num : numsList) {
+        for (String num : numsList) {
             result.append(num);
         }
 
-        return result.toString();
+        return result.charAt(0) == '0' ? "0" : result.toString();
     }
 
 }
