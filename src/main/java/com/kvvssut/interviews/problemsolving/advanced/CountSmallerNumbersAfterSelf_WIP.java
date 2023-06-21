@@ -14,7 +14,7 @@ public class CountSmallerNumbersAfterSelf_WIP {
         System.out.println(new CountSmallerNumbersAfterSelf_WIP().countSmaller(new int[] {2,0,1}));
     }
 
-
+    //TODO : fix me
     public List<Integer> countSmaller(int[] nums) {
         int n = nums.length;;
         int[] counts = new int[n];

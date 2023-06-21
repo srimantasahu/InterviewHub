@@ -1,8 +1,6 @@
 package com.kvvssut.interviews.problemsolving.intermediate;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,6 +14,7 @@ public class LargestNumber {
         System.out.println(new LargestNumber().largestNumber(new int[] {3,30,34,5,9}));
     }
 
+    //TODO : use quick sort
     public String largestNumber(int[] nums) {
         List<String> numsList = Arrays.stream(nums).mapToObj(String::valueOf)
                                 .sorted((n1, n2) -> (n2 + n1).compareTo(n1 + n2)).collect(Collectors.toList());
