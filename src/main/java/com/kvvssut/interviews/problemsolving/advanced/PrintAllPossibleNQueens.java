@@ -12,6 +12,7 @@ public class PrintAllPossibleNQueens {
 
         System.out.println(results);
     }
+
     public List<List<String>> solveNQueens(int n) {
         int[][] board = new int[n][n];
         List<List<String>> solutions = new ArrayList<>();
@@ -30,9 +31,9 @@ public class PrintAllPossibleNQueens {
                 // found a solution
                 solutions.add(printBoard(board));
                 // resetting previous set val
-                board[i-1][j] = 0;
+                board[i - 1][j] = 0;
                 // proceeding further
-                solveNQueens(board, n, i-1, j+1, solutions);
+                solveNQueens(board, n, i - 1, j + 1, solutions);
             } else {
                 solveNQueens(board, n, i, 0, solutions);
             }

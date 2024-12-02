@@ -30,7 +30,7 @@ class ItemStore {
         List<Item> items = itemsMap.get(name);
 
         if (items == null) {
-            synchronized(itemsMap) {
+            synchronized (itemsMap) {
                 items = new ArrayList<>();
                 items.add(new Item(name));
                 itemsMap.put(name, items);

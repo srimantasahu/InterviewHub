@@ -33,14 +33,14 @@ public class Java8SortingUsingComparator {
         employeeList.add(new Employee("Srimanta", "Arora"));
 
         Comparator<Employee> lambdaComparator = Comparator.comparing((Employee e) -> e.getFirstname())
-                                                          .thenComparing(e -> e.getLastname());
+                .thenComparing(e -> e.getLastname());
 
         Comparator<Employee> methodReferenceComparator = Comparator.comparing(Employee::getFirstname)
-                                                                   .thenComparing(Employee::getLastname);
+                .thenComparing(Employee::getLastname);
 
         List<Employee> sortedEmployeeList = employeeList.stream()
-                                                        .sorted(lambdaComparator) // or methodReferenceComparator
-                                                        .collect(Collectors.toList());
+                .sorted(lambdaComparator) // or methodReferenceComparator
+                .collect(Collectors.toList());
 
         sortedEmployeeList.forEach(e -> System.out.println(e.getFirstname() + " " + e.getLastname()));
     }

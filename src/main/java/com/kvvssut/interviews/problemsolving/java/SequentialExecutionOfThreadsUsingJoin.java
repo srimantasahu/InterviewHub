@@ -1,7 +1,7 @@
 package com.kvvssut.interviews.problemsolving.java;
 
 class Sample {
-    
+
     public void methodA() {
         System.out.println("Print A");
     }
@@ -13,7 +13,7 @@ class Sample {
     public void methodC() {
         System.out.println("Print C");
     }
-    
+
 }
 
 public class SequentialExecutionOfThreadsUsingJoin {
@@ -33,7 +33,7 @@ public class SequentialExecutionOfThreadsUsingJoin {
 
         t3.start();
         t3.join(2000); // means wait at most 2000 ms for t3 to finish,
-                            // else continue processing further instructions
+        // else continue processing further instructions
     }
 
 }

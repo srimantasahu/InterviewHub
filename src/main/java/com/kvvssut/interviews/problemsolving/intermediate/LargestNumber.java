@@ -11,13 +11,13 @@ import java.util.stream.Collectors;
 public class LargestNumber {
 
     public static void main(String[] args) {
-        System.out.println(new LargestNumber().largestNumber(new int[] {3,30,34,5,9}));
+        System.out.println(new LargestNumber().largestNumber(new int[]{3, 30, 34, 5, 9}));
     }
 
     //TODO : use quick sort
     public String largestNumber(int[] nums) {
         List<String> numsList = Arrays.stream(nums).mapToObj(String::valueOf)
-                                .sorted((n1, n2) -> (n2 + n1).compareTo(n1 + n2)).collect(Collectors.toList());
+                .sorted((n1, n2) -> (n2 + n1).compareTo(n1 + n2)).collect(Collectors.toList());
 
         StringBuilder result = new StringBuilder();
         for (String num : numsList) {

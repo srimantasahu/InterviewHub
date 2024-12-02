@@ -29,7 +29,7 @@ public class TargetMethodAnnotationForReflectionDemo {
                 targetMethod.invoke(targetMethodClass, new Object[]{
                         "The version of method is : ", 3});
             } catch (IllegalAccessException | IllegalArgumentException
-                    | InvocationTargetException e) {
+                     | InvocationTargetException e) {
                 e.printStackTrace();
             }
 

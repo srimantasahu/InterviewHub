@@ -22,6 +22,10 @@ public class StringCompressionIII {
       For prefix "bb", append "2" followed by "b" to comp.
      */
 
+    public static void main(String[] args) {
+        System.out.println(new StringCompressionIII().compressedString("aaaaaaaaabba"));
+    }
+
     public String compressedString(String word) {
         StringBuilder comp = new StringBuilder();
 
@@ -50,10 +54,6 @@ public class StringCompressionIII {
         }
 
         return comp.toString();
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new StringCompressionIII().compressedString("aaaaaaaaabba"));
     }
 
 }

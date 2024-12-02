@@ -6,6 +6,8 @@ class PoolUsingSemaphore {
 
     private static final int MAX_AVAILABLE = 100;
     private final Semaphore available = new Semaphore(MAX_AVAILABLE, true);
+    protected Object[] items = {}; // ... whatever kinds of items being managed
+    protected boolean[] used = new boolean[MAX_AVAILABLE];
 
     public Object getItem() throws InterruptedException {
         available.acquire();
@@ -16,9 +18,6 @@ class PoolUsingSemaphore {
         if (markAsUnused(x))
             available.release();
     }
-
-    protected Object[] items = {}; // ... whatever kinds of items being managed
-    protected boolean[] used = new boolean[MAX_AVAILABLE];
 
     // Not a particularly efficient data structure; just for demo
 
