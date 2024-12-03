@@ -8,8 +8,8 @@ public class EnumWithConstructorDemo {
         }
 
         System.out.println("\nColor of enum element is : "
-                + ColorWithConstructorEnum.GREEN.getColorText());
+                           + ColorWithConstructorEnum.GREEN.getColorText());
         System.out.println("Fill percentage is : "
-                + ColorWithConstructorEnum.GREEN.getFillPercentage());
+                           + ColorWithConstructorEnum.GREEN.getFillPercentage());
     }
 }

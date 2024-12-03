@@ -81,7 +81,7 @@ public class ProcessingDataWithJava8Streams {
                 .average();
         if (avg.isPresent()) {
             System.out.println("\nAverage of all ages is : "
-                    + avg.getAsDouble());
+                               + avg.getAsDouble());
         } else {
             System.out
                     .println("\nAverage is not calculated - error is - divide / 0");

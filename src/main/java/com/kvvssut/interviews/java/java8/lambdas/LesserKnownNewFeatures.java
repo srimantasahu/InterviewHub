@@ -19,13 +19,13 @@ public class LesserKnownNewFeatures {
     private static void stringJoiner() {
         String founders = String.join(" and ", "Larry", "Sergey", "Moe");
         System.out.println("Using String join with multiple CharSequences : "
-                + founders);
+                           + founders);
 
         String[] states = {"Haryana", "Punjab", "Himachal"};
         String statesList = String.join(", ", states);
         System.out
                 .println("\nUsing String join with iterable instance of CharSequence : "
-                        + statesList);
+                         + statesList);
 
         StringJoiner sj1 = new StringJoiner(", ", "{", "}");
         sj1.setEmptyValue("StringJoiner is empty now!");
@@ -34,7 +34,7 @@ public class LesserKnownNewFeatures {
         sj1.add("Haryana").add("Punjab").add("Himachal");
         System.out
                 .println("\nUsing StringJoiner with delimiter & prefix & suffix arguments : "
-                        + sj1);
+                         + sj1);
 
         StringJoiner sj2 = new StringJoiner(", ", "{", "}");
         sj2.add("Odisha");
@@ -49,7 +49,7 @@ public class LesserKnownNewFeatures {
         StringJoiner sj3 = new StringJoiner(" and ");
         set.forEach(s -> sj3.add(s));
         System.out.println("\nAdded colelction's items to a StringJoiner : "
-                + sj3);
+                           + sj3);
     }
 
     private static void fileSearch() {

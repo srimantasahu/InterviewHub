@@ -11,14 +11,14 @@ public class Printer<T extends ICartridge> {
     @Override
     public String toString() {
         System.out.println("toString - Fill percentage is: "
-                + cartridge.getFillPercentage());
+                           + cartridge.getFillPercentage());
         return cartridge.toString();
     }
 
     public <U extends ICartridge> void printUsingCartridge(U cartridge,
                                                            String msg) {
         System.out.println("printUsingCartridge - Fill percentage is: "
-                + cartridge.getFillPercentage());
+                           + cartridge.getFillPercentage());
         System.out.println(cartridge.toString() + " " + msg);
     }
 

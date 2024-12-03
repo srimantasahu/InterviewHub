@@ -20,7 +20,7 @@ class VowelComparator implements Comparator<String> {
         for (int i = 0; i < word.length(); i++) {
             char chr = word.charAt(i);
             if (chr == 'a' || chr == 'A' || chr == 'e' || chr == 'E' || chr == 'i' || chr == 'I' || chr == 'o'
-                    || chr == 'O' || chr == 'u' || chr == 'U')
+                || chr == 'O' || chr == 'u' || chr == 'U')
                 vowel++;
         }
         return vowel;

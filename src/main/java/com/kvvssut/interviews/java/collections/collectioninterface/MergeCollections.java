@@ -23,7 +23,7 @@ public class MergeCollections {
 
         while (c1Element != null || c2Element != null) {
             boolean useC1Element = c2Element == null || c1Element != null
-                    && c1Element.compareTo(c2Element) < 0;
+                                                        && c1Element.compareTo(c2Element) < 0;
 
             if (useC1Element) {
                 mergedList.add(c1Element);

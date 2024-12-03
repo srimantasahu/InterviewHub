@@ -14,7 +14,7 @@ public class CustomerData implements Serializable {        // warns if serialVer
     @Override
     public String toString() {
         return "CustomerData [customerName=" + customerName + ", customerId="
-                + customerId + ", dob=" + dob + "]";
+               + customerId + ", dob=" + dob + "]";
     }
 
     public String getCustomerName() {

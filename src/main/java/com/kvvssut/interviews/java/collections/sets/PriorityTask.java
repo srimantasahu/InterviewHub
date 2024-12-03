@@ -41,7 +41,7 @@ public final class PriorityTask implements Comparable<PriorityTask> {
         if (obj instanceof PriorityTask) {
             PriorityTask priorityTask = (PriorityTask) obj;
             return task.equal(priorityTask.task)
-                    && priority.equals(priorityTask.priority);
+                   && priority.equals(priorityTask.priority);
         }
         return false;
     }

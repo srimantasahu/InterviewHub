@@ -43,8 +43,8 @@ public class KnightsTour {
             for (int i = 0; i < possibleMoves; i++) {
 
                 if (((row + moveX[i] >= 0 && row + moveX[i] < boardLength)
-                        && (col + moveY[i] >= 0 && col + moveY[i] < boardLength)
-                        && (board[row + moveX[i]][col + moveY[i]] == -1))) {
+                     && (col + moveY[i] >= 0 && col + moveY[i] < boardLength)
+                     && (board[row + moveX[i]][col + moveY[i]] == -1))) {
 
                     if (solveKnightsTour(moveIndex + 1, row + moveX[i], col + moveY[i])) {
                         return true;

@@ -36,13 +36,13 @@ public class DemoJDBC {
                         .executeQuery("SELECT * FROM restdata");
                 while (resultSet.next()) {
                     System.out.println(resultSet.getInt(1) + " "
-                            + resultSet.getString(2) + " "
-                            + resultSet.getBigDecimal(3) + " "
-                            + resultSet.getDate(4));
+                                       + resultSet.getString(2) + " "
+                                       + resultSet.getBigDecimal(3) + " "
+                                       + resultSet.getDate(4));
                     System.out.println(resultSet.getInt("id") + " "
-                            + resultSet.getString("username") + " "
-                            + resultSet.getBigDecimal("totalBalance") + " "
-                            + resultSet.getTimestamp("createdAt"));
+                                       + resultSet.getString("username") + " "
+                                       + resultSet.getBigDecimal("totalBalance") + " "
+                                       + resultSet.getTimestamp("createdAt"));
                 }
             } catch (SQLException e) {
                 System.out.println("Statement Creation Failed!");
@@ -59,8 +59,8 @@ public class DemoJDBC {
 
                 System.out
                         .println("Rows deleted: "
-                                + statement
-                                .executeUpdate("DELETE FROM restdata WHERE username ='Sahu'"));
+                                 + statement
+                                         .executeUpdate("DELETE FROM restdata WHERE username ='Sahu'"));
             } catch (SQLException e) {
                 System.out.println("Statement Creation Failed!");
                 e.printStackTrace();
@@ -76,8 +76,8 @@ public class DemoJDBC {
 
                 System.out
                         .println("Rows inserted: "
-                                + statement
-                                .executeUpdate("INSERT INTO restdata VALUES(2,'Sahu',595,'2014-03-08')"));
+                                 + statement
+                                         .executeUpdate("INSERT INTO restdata VALUES(2,'Sahu',595,'2014-03-08')"));
             } catch (SQLException e) {
                 System.out.println("Statement Creation Failed!");
                 e.printStackTrace();
@@ -93,8 +93,8 @@ public class DemoJDBC {
 
                 System.out
                         .println("Rows updated: "
-                                + statement
-                                .executeUpdate("UPDATE restdata SET totalBalance = 1000 WHERE username ='Sahu'"));
+                                 + statement
+                                         .executeUpdate("UPDATE restdata SET totalBalance = 1000 WHERE username ='Sahu'"));
             } catch (SQLException e) {
                 System.out.println("Statement Creation Failed!");
                 e.printStackTrace();

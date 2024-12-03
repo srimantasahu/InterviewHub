@@ -106,7 +106,7 @@ public class EmployeeComparable implements Comparable<EmployeeComparable> {
     //this is required to print the user friendly information about the Employee
     public String toString() {
         return "[id=" + this.id + ", name=" + this.name + ", age=" + this.age + ", salary=" +
-                this.salary + "]";
+               this.salary + "]";
     }
 
 }

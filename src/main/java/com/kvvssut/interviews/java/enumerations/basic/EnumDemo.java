@@ -8,7 +8,7 @@ public class EnumDemo {
         }
 
         System.out.println("\nColor of enum element is : "
-                + getColor(ColorEnum.GREEN));
+                           + getColor(ColorEnum.GREEN));
     }
 
     private static String getColor(ColorEnum color) {

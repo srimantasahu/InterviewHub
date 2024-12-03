@@ -30,10 +30,10 @@ public class JSONSerialisationDeserialisationMain {
 
         System.out.println(employeeObj.getName());
         System.out.println(employeeObj.getManager().getName() + "\t- dept is "
-                + employeeObj.getManager().getDept());
+                           + employeeObj.getManager().getDept());
         System.out.println(employeeObj.getManager().getManager().getName()
-                + "\t- dept is "
-                + employeeObj.getManager().getManager().getDept());
+                           + "\t- dept is "
+                           + employeeObj.getManager().getManager().getDept());
 
         System.out.println(convertJavaObjectToJackson(manager)); // JSON
         // representation

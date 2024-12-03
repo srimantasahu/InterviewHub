@@ -26,7 +26,7 @@ public class RecursiveCountPossibleCoinsSum {
         }
 
         return countCoinsSum(setOfCoins, coins - 1, sum)
-                + countCoinsSum(setOfCoins, coins, sum - setOfCoins[coins - 1]);
+               + countCoinsSum(setOfCoins, coins, sum - setOfCoins[coins - 1]);
     }
 
 }

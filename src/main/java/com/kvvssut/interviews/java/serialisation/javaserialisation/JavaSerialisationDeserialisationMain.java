@@ -23,18 +23,18 @@ public class JavaSerialisationDeserialisationMain {
 
         System.out.println(employeeObj.getName());
         System.out.println(employeeObj.getManager().getName() + "\t- dept is "
-                + employeeObj.getManager().getDept());
+                           + employeeObj.getManager().getDept());
         System.out.println(employeeObj.getManager().getManager().getName()
-                + "\t- dept is "
-                + employeeObj.getManager().getManager().getDept() + "\n");
+                           + "\t- dept is "
+                           + employeeObj.getManager().getManager().getDept() + "\n");
 
         serialiseJavaObject(manager);
         Manager managerObj = deserialiseJavaObject(Manager.class);
 
         System.out.println(managerObj.getName() + "\t- dept is "
-                + manager.getDept());
+                           + manager.getDept());
         System.out.println(managerObj.getManager().getName() + "\t- dept is "
-                + managerObj.getManager().getDept() + "\n");
+                           + managerObj.getManager().getDept() + "\n");
 
         List<Employee> reportersOfManagerList = new ArrayList<Employee>();
         reportersOfManagerList.add(employee1);
@@ -46,9 +46,9 @@ public class JavaSerialisationDeserialisationMain {
         ManagerReporters managerReportersObj = deserialiseJavaObject(ManagerReporters.class);
 
         System.out.println(managerReportersObj.getManager().getName()
-                + "\t- dept is " + managerReportersObj.getManager().getDept());
+                           + "\t- dept is " + managerReportersObj.getManager().getDept());
         System.out.println("Size of reporters is : "
-                + managerReportersObj.getReporters().size());
+                           + managerReportersObj.getReporters().size());
         for (Employee employee : managerReportersObj.getReporters()) {
             System.out.println(employee.getName());
         }

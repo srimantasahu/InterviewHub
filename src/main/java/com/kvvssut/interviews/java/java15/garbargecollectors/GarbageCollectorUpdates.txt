@@ -1,0 +1,11 @@
+
+Z Garbage Collector was an experimental feature till Java 15. It is low latency, highly scalable garbage collector.
+
+ZGC was introduced in Java 11 as an experimental feature as developer community felt it to be too large to be released early.
+A lot of improvements are done to this garbage collection since then.
+
+ZGC is highly performant and works efficiently even in case of massive data applications e.g. machine learning applications.
+It ensures that there is no long pause while processing the data due to garbage collection. It supports Linux, Windows and macOS.
+
+The Shenandoah low-pause-time garbage collector is now out of the experimental stage.
+It had been introduced into JDK 12 and from java 15 onwards, it is a part of standard JDK.
