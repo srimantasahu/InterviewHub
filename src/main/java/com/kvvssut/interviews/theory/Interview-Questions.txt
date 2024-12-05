@@ -5,7 +5,6 @@ Resource & Client authentication n authorization
 AMPS messaging - WrapperMessage, Json and AMPS Authentication
 HTTPS - SSL certificates for tcps
 Spring - Conditional initialization of bean - @Conditional on property
-Java 11 and 17 features
 Docker & kubernetes - containers n pod
 Kafka concepts & kafka streams
 event sourcing - state, event and routing rules and workflow specs
