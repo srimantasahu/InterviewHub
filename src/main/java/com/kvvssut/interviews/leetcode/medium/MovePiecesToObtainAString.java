@@ -37,34 +37,18 @@ public class MovePiecesToObtainAString {
     }
 
     public boolean canChange(String start, String target) {
-        char[] stArr = start.toCharArray();
-        int len = target.length();
-        for (int t = 0; t < len; t++) {
-            char tch = target.charAt(t);
-            char sch = stArr[t];
-            /*
-            tch = R =>  sch = R
-            tch = L =>  sch = L, _
-            tch = _ =>  sch = R, _
-             */
-            if (tch == 'R' && sch != 'R') return false;
-            if (tch == sch) continue;
-            if (tch == 'L' && sch == 'R') return false;
-            if (tch == '_' && sch == 'L') return false;
+        int n = target.length();
 
-            int i = t + 1;
-            if (tch == 'L') {
-                while (i < len - 1 && stArr[i] == '_') {
-                    i++;
-                }
-            } else {
-                while (i < len - 1 && stArr[i] == 'R') {
-                    i++;
-                }
-            }
-            if (i == len || stArr[i] != tch) return false;
-            stArr[i] = sch;
-            // stArr[t] = tch;   // pretty print
+        for (int i = 0, j = 0; i <= n && j <= n; i++, j++) {
+            while (i < n && start.charAt(i) == '_') i++;
+            while (j < n && target.charAt(j) == '_') j++;
+
+            if (i == n || j == n) return i == j;
+
+            if (start.charAt(i) != target.charAt(j)) return false;
+
+            if (start.charAt(i) == 'L' && i < j) return false;
+            else if (start.charAt(i) == 'R' && i > j) return false;
         }
 
         return true;
