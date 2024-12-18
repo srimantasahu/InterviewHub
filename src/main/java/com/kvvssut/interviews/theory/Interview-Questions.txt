@@ -1,4 +1,3 @@
-Cucumber tests and step definition
 HAClient server chooser and authenticator for reconnection
 Certificates handling and jks
 Resource & Client authentication n authorization
@@ -33,4 +32,3 @@ generics design implementations
 HLD and LLD designs
 coalesing ring buffer
 GPU vs CPU and SIMD - single instructions multiple data
-
