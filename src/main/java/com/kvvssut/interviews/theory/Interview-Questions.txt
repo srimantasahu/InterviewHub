@@ -17,7 +17,7 @@ gRPC workflow
 HTTP2 flow
 Protobuf messages - vs json/xml
 what are clustered indexes in database
-semaphore, thread local, Fork and join, latch, mutex, LockSupport.park, Phaser, FairLock acquire and release, RateLmiter.throttle
+semaphore, thread local, Fork and join, latch, mutex, LockSupport.park, Phaser, FairLock acquire and release, RateLimiter.throttle
 few nodes failing in cloud infra structure - how to figure out the issue
 fifo impl with O(1) lookup
 cache implementation - with eviction
@@ -32,3 +32,5 @@ base64 and sha encoding
 generics design implementations
 HLD and LLD designs
 coalesing ring buffer
+GPU vs CPU and SIMD - single instructions multiple data
+
