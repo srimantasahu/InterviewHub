@@ -32,3 +32,4 @@ generics design implementations
 HLD and LLD designs
 coalesing ring buffer
 GPU vs CPU and SIMD - single instructions multiple data
+GraphQL - advanced version of rest apis

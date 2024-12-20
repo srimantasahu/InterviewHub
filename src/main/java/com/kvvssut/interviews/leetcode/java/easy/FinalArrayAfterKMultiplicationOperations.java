@@ -1,7 +1,6 @@
-package com.kvvssut.interviews.leetcode.easy;
+package com.kvvssut.interviews.leetcode.java.easy;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 /*
 You are given an integer array nums, an integer k, and an integer multiplier.

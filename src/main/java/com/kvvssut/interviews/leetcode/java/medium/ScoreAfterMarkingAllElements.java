@@ -1,4 +1,4 @@
-package com.kvvssut.interviews.leetcode.medium;
+package com.kvvssut.interviews.leetcode.java.medium;
 
 /*
 You are given an array nums consisting of positive integers.

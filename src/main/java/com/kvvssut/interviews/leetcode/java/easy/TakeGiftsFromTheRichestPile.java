@@ -1,4 +1,4 @@
-package com.kvvssut.interviews.leetcode.easy;
+package com.kvvssut.interviews.leetcode.java.easy;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

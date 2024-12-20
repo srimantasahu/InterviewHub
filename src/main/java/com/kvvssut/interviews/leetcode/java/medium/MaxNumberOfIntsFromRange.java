@@ -1,4 +1,4 @@
-package com.kvvssut.interviews.leetcode.medium;
+package com.kvvssut.interviews.leetcode.java.medium;
 
 import java.util.Arrays;
 

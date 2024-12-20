@@ -1,4 +1,4 @@
-package com.kvvssut.interviews.leetcode.medium;
+package com.kvvssut.interviews.leetcode.java.medium;
 
 /*
 You are given two 0-indexed strings str1 and str2.
