@@ -14,7 +14,6 @@ In web services how can we simultaneously produce both JSON and XML output?
 javascript what is a Promise?
 gRPC workflow
 HTTP2 flow
-Protobuf messages - vs json/xml
 what are clustered indexes in database
 semaphore, thread local, Fork and join, latch, mutex, LockSupport.park, Phaser, FairLock acquire and release, RateLimiter.throttle
 few nodes failing in cloud infra structure - how to figure out the issue
