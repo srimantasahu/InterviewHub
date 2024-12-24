@@ -51,8 +51,6 @@ class RemoveDuplicatesFromSortedArray:
 # test code
 test = RemoveDuplicatesFromSortedArray()
 ns = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
-
 k = test.removeDuplicates(ns)
-
 print("k is: " + str(k))
 print("updated list: " + str(ns))

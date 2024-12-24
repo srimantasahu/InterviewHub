@@ -55,8 +55,6 @@ class RemoveElementArray:
 test = RemoveElementArray()
 nums1 = [3, 2, 2, 3]
 val = 3
-
 k = test.removeElement(nums1, val)
-
 print("k is: " + str(k))
 print("updated list: " + str(nums1))

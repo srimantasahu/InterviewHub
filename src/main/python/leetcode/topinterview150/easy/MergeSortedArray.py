@@ -61,5 +61,4 @@ test = MergeSortedArray()
 list1 = [1, 2, 3, 0, 0, 0]
 list2 = [2, 5, 6]
 test.merge(list1, 3, list2, 3)
-
 print("updated list: " + str(list1))

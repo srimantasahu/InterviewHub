@@ -15,7 +15,6 @@ javascript what is a Promise?
 gRPC workflow
 HTTP2 flow
 what are clustered indexes in database
-semaphore, thread local, Fork and join, latch, mutex, LockSupport.park, Phaser, FairLock acquire and release, RateLimiter.throttle
 few nodes failing in cloud infra structure - how to figure out the issue
 fifo impl with O(1) lookup
 cache implementation - with eviction
@@ -25,10 +24,11 @@ CDN to avoid Ddos attack
 why string immutable
 java8 method referencing types
 java8 stream vs parallel stream - underlying fork and join pool
-diff between Runnable and Callable
 base64 and sha encoding
 generics design implementations
 HLD and LLD designs
 coalesing ring buffer
 GPU vs CPU and SIMD - single instructions multiple data
 GraphQL - advanced version of rest apis
+diff between Runnable and Callable
+semaphore, thread local, Fork and join, latch, mutex, LockSupport.park, Phaser, FairLock acquire and release, RateLimiter.throttle
