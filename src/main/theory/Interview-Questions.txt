@@ -9,21 +9,16 @@ Kafka concepts & kafka streams
 event sourcing - state, event and routing rules and workflow specs
 Filter vs Interceptor
 In web services how can we simultaneously produce both JSON and XML output?
-javascript what is a Promise?
 gRPC workflow
 HTTP2 flow
 what are clustered indexes in database
 few nodes failing in cloud infra structure - how to figure out the issue
 fifo impl with O(1) lookup
 cache implementation - with eviction
-video streaming at scale - high level design
-CDN to avoid Ddos attack
-java8 method referencing types
-java8 stream vs parallel stream - underlying fork and join pool
-base64 and sha encoding
 generics design implementations
 coalesing ring buffer
-GPU vs CPU and SIMD - single instructions multiple data
 GraphQL - advanced version of rest apis
 semaphore, thread local, Fork and join, latch, mutex, LockSupport.park, Phaser, FairLock acquire and release, RateLimiter.throttle
 what are bloom filters
+what is blockchain technology
+video streaming at scale - high level design
