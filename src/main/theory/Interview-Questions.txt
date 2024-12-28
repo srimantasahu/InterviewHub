@@ -3,22 +3,16 @@ Certificates handling and jks
 Resource & Client authentication n authorization
 AMPS messaging - WrapperMessage, Json and AMPS Authentication
 HTTPS - SSL certificates for tcps
-Spring - Conditional initialization of bean - @Conditional on property
 Docker & kubernetes - containers n pod
 Kafka concepts & kafka streams
 event sourcing - state, event and routing rules and workflow specs
-Filter vs Interceptor
-In web services how can we simultaneously produce both JSON and XML output?
 gRPC workflow
 HTTP2 flow
-what are clustered indexes in database
-few nodes failing in cloud infra structure - how to figure out the issue
-fifo impl with O(1) lookup
 cache implementation - with eviction
-generics design implementations
-coalesing ring buffer
 GraphQL - advanced version of rest apis
 semaphore, thread local, Fork and join, latch, mutex, LockSupport.park, Phaser, FairLock acquire and release, RateLimiter.throttle
 what are bloom filters
 what is blockchain technology
 video streaming at scale - high level design
+few nodes failing in cloud infra structure - how to figure out the issue
+fifo impl with O(1) lookup
