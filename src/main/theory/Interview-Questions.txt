@@ -6,13 +6,4 @@ HTTPS - SSL certificates for tcps
 Docker & kubernetes - containers n pod
 Kafka concepts & kafka streams
 event sourcing - state, event and routing rules and workflow specs
-gRPC workflow
-HTTP2 flow
-cache implementation - with eviction
-GraphQL - advanced version of rest apis
 semaphore, thread local, Fork and join, latch, mutex, LockSupport.park, Phaser, FairLock acquire and release, RateLimiter.throttle
-what are bloom filters
-what is blockchain technology
-video streaming at scale - high level design
-few nodes failing in cloud infra structure - how to figure out the issue
-fifo impl with O(1) lookup
