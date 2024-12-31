@@ -1,9 +1,0 @@
-HAClient server chooser and authenticator for reconnection
-Certificates handling and jks
-Resource & Client authentication n authorization
-AMPS messaging - WrapperMessage, Json and AMPS Authentication
-HTTPS - SSL certificates for tcps
-Docker & kubernetes - containers n pod
-Kafka concepts & kafka streams
-event sourcing - state, event and routing rules and workflow specs
-semaphore, thread local, Fork and join, latch, mutex, LockSupport.park, Phaser, FairLock acquire and release, RateLimiter.throttle
