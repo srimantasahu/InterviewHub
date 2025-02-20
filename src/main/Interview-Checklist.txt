@@ -1,0 +1,40 @@
+-----------------------------------------------------------------------------------------Introduction Round---------------------------------------------------------------------------------------------------------
+Revise Introduce yourself
+Revise Why on a break
+-----------------------------------------------------------------------------------------Coding Round---------------------------------------------------------------------------------------------------------
+Revise DataStructures time complexities of array, string, list, stack, queue, heap, trees
+Revise Algorithms time complexities of hashing, binary search, merge sort, quick sort, recursion, backtracking, dynamic programming
+Revise SQL: joins, aggregate functions, row_number, dense_rank
+Revise PL/SQL: procedures, triggers, dbms locks, rollback, commit
+Revise solved LeetCode solutions from the list: https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms
+Revise Multithreading & Concurrency topics: Executors, CompletableFutures, Reenterant Locks, Semaphore, Mutex, synchronized keyword, volatile, Atomic Datatypes
+Revise Java Operator precedence and bit manipulation operations
+Revise basic design coding problems: consumer-producer, deadlock, LRUCache, FIFOCache, Use of synchronized and locks/mutex
+-----------------------------------------------------------------------------------------Java Round---------------------------------------------------------------------------------------------------------
+Revise Java Datatypes sizes for boolean, int, char, float, double, list, map - empty constructor vs initial size
+Revise Java versions feature updates
+Revise JVM Architecture: JIT compiler, Garbage Collectors, Profiling tools, CPU and Memory usages, Thread Dumps, deadlock detection
+Revise Design Patterns: singleton, command, decorator, builder, factory, abstract factory, facade, proxy
+Revise Spring concepts: Dependency Injection, Inversion of Control, @Provided/@Primary/@Controller/@SpringBootConfiguration, Spring Data, Spring Security - auth & filter
+Revise Kafka Concepts: Partitions, Consumer groups, zookeeper, streaming
+Revise SAGA Pattern: DB consistency and conflict resolution
+Revise HTTPS (TLS) and SSL authentication/encryption-decryption using jwt tokens, certificates and kerberos authentication
+Revise Java Code Vulnerabilities: XXS attack, men in the middle attack, object manipulation
+-----------------------------------------------------------------------------------------UI Round---------------------------------------------------------------------------------------------------------
+Revise UI Concepts: Javascript - Promise, AsyncAwait, CORS, AngularJS, ExtJS - sencha
+Revise Login Authentication workflow, OAuth, cookies
+-----------------------------------------------------------------------------------------Cloud Round---------------------------------------------------------------------------------------------------------
+Revise AWS Concepts: S3, EC2, DNS
+Revise Cloud concepts: Netflix Eureka, Chaos Monkey, subnets, IP whitelisting, central logging (Splunk), Memory management, CPU management, node details using heartbeats
+-----------------------------------------------------------------------------------------Design Round---------------------------------------------------------------------------------------------------------
+Revise Electra Architectural Design
+Remember computing terminologies by heart: low latency, high throughput, high frequency, fault-tolerant, multi-tenant, platform-agnostic, write-once-run-anywhere (WORA)
+Database selections criteria: SQL vs NOSQL
+Revise Design Concepts: CAP theorem, SOLID principles, ACID principles, DB Normalizations forms, sharding, fragmentation, how to optimize searching using indexes and etc
+Revise Design implementation steps for Monolith to microservices: breakdown with individual schema per service or shared for co-related ones
+Revise System Design problems: rate limiter, key-value store, unique-id generator, url shortener, web crawler, notification service, chat system
+-----------------------------------------------------------------------------------------Miscellaneous Topics---------------------------------------------------------------------------------------------------------
+Revise Unix commands: ls -lrt, vi, cat, ping, nslookup, ipconfig, netstat, pwd, chmod - access levels
+Revise CI/CD pipelines incl yaml configurations, docker file, kubernetes
+Revise differences: REST vs GraphQL, SQL vs NOSQL, TCP vs UDP, Java vs Json serialization, Base64 vs SHA
+-----------------------------------------------------------------------------------------The End------------------------------------------------------------------------------------------------------------------------

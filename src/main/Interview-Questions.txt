@@ -1,0 +1,3 @@
+remember and draw a complete architectural diagram of electra using draw.io
+learn B+ Tree data structure for clustered indexes
+Red-Black tree for HashMap

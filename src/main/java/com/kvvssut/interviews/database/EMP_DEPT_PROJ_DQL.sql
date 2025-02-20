@@ -52,7 +52,7 @@ select departmentid, firstname || ' ' || lastname as employee, emailid, salary f
 
 -- SQL interview queries -
 select firstname || ' ' || lastname as "3rd Highest paid employees", salary from employee where salary = (select max(salary) from employee where salary < (select max(salary) from employee where salary < (select max(salary) from employee))); -- using multiple sub-queries
-select * from(select firstname || ' ' || lastname as "3rd Highest paid employee", salary, row_number() over (order by salary desc) as rownumber from employee order by firstname || ' ' || lastname) where rownumber = 3;  -- returns the 3rd highgest paid employee, even if with same salaries
+select * from(select firstname || ' ' || lastname as "3rd Highest paid employee", salary, row_number() over (order by salary desc) as rownumber from employee order by firstname || ' ' || lastname) where rownumber = 3;  -- returns the 3rd highest paid employee, even if with same salaries
 select * from(select firstname || ' ' || lastname as "3rd Highest paid employees", salary, dense_rank() over (order by salary desc) as ranking from employee order by firstname || ' ' || lastname) where ranking = 3;  -- returns the 3rd highest paid employees, with distinct salaries
 /*Data :- insert into table values ('A'),('A'),('A'),('B'),('B'),('C'),('C');
 Row_Number() - This function will assign a unique id to each row returned from the query.
