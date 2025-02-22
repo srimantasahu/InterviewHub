@@ -2,14 +2,14 @@
 Revise Introduce yourself
 Revise Why on a break
 -----------------------------------------------------------------------------------------Coding Round---------------------------------------------------------------------------------------------------------
-Revise DataStructures time complexities of array, string, list, stack, queue, heap, trees
-Revise Algorithms time complexities of hashing, binary search, merge sort, quick sort, recursion, backtracking, dynamic programming
+Revise DataStructures time complexities of array, string, list, stack, queue, heap, trees, B+ tree, RedBlack tree
+Revise Algorithms time complexities of hashing, binary search, merge sort, quick sort, recursion, matrix multiplication, graphs BFS & DFS, backtracking, dynamic programming
 Revise SQL: joins, aggregate functions, row_number, dense_rank
-Revise PL/SQL: procedures, triggers, dbms locks, rollback, commit
-Revise solved LeetCode solutions from the list: https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms
-Revise Multithreading & Concurrency topics: Executors, CompletableFutures, Reenterant Locks, Semaphore, Mutex, synchronized keyword, volatile, Atomic Datatypes
+Revise PL/SQL: functions, procedures, triggers, dbms locks, rollback, commit
+Revise Multithreading & Concurrency topics: synchronized, Atomic datatypes, volatile, Reenterant locks, Semaphore, Mutex,  Futures, CompletableFutures, Executors, ThreadPoolExecutor
 Revise Java Operator precedence and bit manipulation operations
-Revise basic design coding problems: consumer-producer, deadlock, LRUCache, FIFOCache, Use of synchronized and locks/mutex
+Revise basic design coding problems: consumer-producer, Deadlock, FIFOCache, LRUCache
+Revise solved LeetCode solutions from the list: https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms
 -----------------------------------------------------------------------------------------Java Round---------------------------------------------------------------------------------------------------------
 Revise Java Datatypes sizes for boolean, int, char, float, double, list, map - empty constructor vs initial size
 Revise Java versions feature updates
