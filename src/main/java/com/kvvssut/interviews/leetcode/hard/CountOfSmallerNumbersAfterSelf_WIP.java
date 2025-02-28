@@ -1,7 +1,9 @@
 package com.kvvssut.interviews.leetcode.hard;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.IntStream;
 
 /*
 Given an integer array nums, return an integer array counts where counts[i] is the number of smaller elements to the right of nums[i].
@@ -28,32 +30,33 @@ Constraints:
 public class CountOfSmallerNumbersAfterSelf_WIP {
 
     public static void main(String[] args) {
-        System.out.println(new CountOfSmallerNumbersAfterSelf_WIP().countSmaller(new int[]{5, 2, 6, 1}));
-        System.out.println(new CountOfSmallerNumbersAfterSelf_WIP().countSmaller(new int[]{-1, 0}));
+//        System.out.println(new CountOfSmallerNumbersAfterSelf_WIP().countSmaller(new int[]{5, 2, 6, 1}));
+        System.out.println(new CountOfSmallerNumbersAfterSelf_WIP().countSmaller(new int[]{-1, -1}));
     }
 
     public List<Integer> countSmaller(int[] nums) {
-        int len = nums.length;
-        List<Integer> counts = new ArrayList<>(len);
-        counts.add(0); // for last entry
+        int n = nums.length;
+        List<Entry> entries = IntStream.range(0, n)
+                .mapToObj(i -> new Entry(nums[i], i))
+                .sorted(Comparator.comparing(Entry::val).thenComparing(Entry::idx, Comparator.reverseOrder())).toList();
+        Integer[] counts = new Integer[n];
 
-        for (int i = len - 2; i >= 0; i--) {
-            for (int j = i + 1; j < len; ) {
-                if (nums[j] == nums[i]) {
-                    counts.addFirst(counts.get(j - i - 1));
-                    break;
-                } else if (nums[j] < nums[i]) {
-                    counts.addFirst(counts.get(j - i - 1) + 1);
-                    break;
-                }
-                if (++j == len) {
-                    counts.addFirst(0);
-                }
+        for (int i = 0; i < n; i++) {
+            int idx = entries.get(i).idx;
+
+            if (i > idx) {
+                counts[idx] = i - idx;
+            } else if (i == idx) {
+                counts[idx] = i;
+            } else {
+                counts[idx] = 0;
             }
         }
 
-        return counts;
+        return Arrays.asList(counts);
     }
 
+    private record Entry(int val, int idx) {
+    }
 
 }

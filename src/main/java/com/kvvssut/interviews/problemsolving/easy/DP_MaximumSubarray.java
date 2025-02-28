@@ -12,7 +12,11 @@ package com.kvvssut.interviews.problemsolving.easy;
 
 public class DP_MaximumSubarray {
 
-    public int maxSubArray(int[] nums) {
+    public static void main(String[] args) {
+        System.out.println(maxSubArray(new int[] {-2,1,-3,4,-1,2,1,-5,4}));
+    }
+
+    public static int maxSubArray(int[] nums) {
         int len = nums.length;
         int prev = nums[0];
         int max = nums[0];

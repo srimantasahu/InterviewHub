@@ -15,7 +15,11 @@ package com.kvvssut.interviews.problemsolving.easy;
 
 public class DP_BuySellStock {
 
-    public int maxProfit(int[] prices) {
+    public static void main(String[] args) {
+        System.out.println(maxProfit(new int[] {7,1,5,3,6,4}));
+    }
+
+    public static int maxProfit(int[] prices) {
         int n = prices.length;
         int max = 0;
         int low = prices[0];
