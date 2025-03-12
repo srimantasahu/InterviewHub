@@ -13,7 +13,7 @@ Revise solved LeetCode solutions from the list: https://leetcode.com/explore/int
 -----------------------------------------------------------------------------------------Java Round---------------------------------------------------------------------------------------------------------
 Revise Java Datatypes sizes for boolean, int, char, float, double, list, map - empty constructor vs initial size
 Revise Java versions feature updates
-Revise JVM Architecture: JIT compiler, Garbage Collectors, Profiling tools, CPU and Memory usages, Thread Dumps, deadlock detection
+Revise JVM Architecture: JIT compiler, Garbage Collectors, Profiling tools, CPU and Memory usages, ThreadLocal, Thread Dumps, deadlock detection
 Revise Design Patterns: singleton, command, decorator, builder, factory, abstract factory, facade, proxy
 Revise Spring concepts: Dependency Injection, Inversion of Control, @Provided/@Primary/@Controller/@SpringBootConfiguration, Spring Data, Spring Security - auth & filter
 Revise Kafka Concepts: Partitions, Consumer groups, zookeeper, streaming
