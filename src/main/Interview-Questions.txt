@@ -1,4 +1,5 @@
+amps authentication - server conf changes and how it authenticates also authorization confs
 remember and draw a complete architectural diagram of electra using draw.io
 learn B+ Tree data structure for clustered indexes
 Red-Black tree for HashMap
-add trie data structure impl
+TreeMap with compareTo returns -1
