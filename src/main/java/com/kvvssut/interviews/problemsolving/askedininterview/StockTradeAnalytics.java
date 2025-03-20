@@ -9,6 +9,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class StockTradeAnalytics {
 
+    private record StockPriceVolMetrics(long latestTimestamp, double latestPrice, double maxPrice, double minPrice,
+                                        long totalVolume, double cumulativePriceVolMultiplier) {
+    }
+
     private final Map<String, StockPriceVolMetrics> cache;
 
     public StockTradeAnalytics() {
@@ -18,47 +22,40 @@ public class StockTradeAnalytics {
     public void addTrade(long timestamp, String stock, double price, int vol) {
         StockPriceVolMetrics metrics;
         if (cache.containsKey(stock)) {
-            metrics = cache.get(stock);
-            if (timestamp > metrics.getLatestTimestamp()) {
-                metrics.setLatestTimestamp(timestamp);
-                metrics.setLatestPrice(price);
-            }
-            if (price > metrics.getMaxPrice()) metrics.setMaxPrice(price);
-            if (price < metrics.getMinPrice()) metrics.setMinPrice(price);
-            metrics.setTotalVolume(metrics.getTotalVolume() + vol);
-            metrics.setCumPriceVolMultiplier(metrics.getCumPriceVolMultiplier() + price * vol);
+            StockPriceVolMetrics old = cache.get(stock);
+            metrics = new StockPriceVolMetrics(
+                    Math.max(timestamp, old.latestTimestamp),
+                    timestamp > old.latestTimestamp ? price : old.latestPrice,
+                    Math.max(price, old.maxPrice),
+                    Math.min(price, old.minPrice),
+                    old.totalVolume + vol,
+                    old.cumulativePriceVolMultiplier + price * vol);
         } else {
-            metrics = new StockPriceVolMetrics();
-            metrics.setLatestTimestamp(timestamp);
-            metrics.setLatestPrice(price);
-            metrics.setMaxPrice(price);
-            metrics.setMinPrice(price);
-            metrics.setTotalVolume(vol);
-            metrics.setCumPriceVolMultiplier(price * vol);
+            metrics = new StockPriceVolMetrics(timestamp, price, price, price, vol, price * vol);
         }
         cache.put(stock, metrics);
     }
 
     public double getLatestPrice(String stock) {
-        return cache.containsKey(stock) ? cache.get(stock).getLatestPrice() : -999;
+        return cache.containsKey(stock) ? cache.get(stock).latestPrice : -999;
     }
 
     public double getMaxPrice(String stock) {
-        return cache.containsKey(stock) ? cache.get(stock).getMaxPrice() : -999;
+        return cache.containsKey(stock) ? cache.get(stock).maxPrice : -999;
     }
 
     public double getMinPrice(String stock) {
-        return cache.containsKey(stock) ? cache.get(stock).getMinPrice() : -999;
+        return cache.containsKey(stock) ? cache.get(stock).minPrice : -999;
     }
 
     public long getTotalVolume(String stock) {
-        return cache.containsKey(stock) ? cache.get(stock).getTotalVolume() : -999;
+        return cache.containsKey(stock) ? cache.get(stock).totalVolume : -999;
     }
 
     public double getVWAP(String stock) {
         if (cache.containsKey(stock)) {
             StockPriceVolMetrics metrics = cache.get(stock);
-            return metrics.getCumPriceVolMultiplier() / metrics.getTotalVolume();
+            return metrics.cumulativePriceVolMultiplier / metrics.totalVolume;
         }
         return 0;
     }
@@ -93,61 +90,4 @@ public class StockTradeAnalytics {
         System.out.println(stockTradeAnalytics.getVWAP("MSN"));         // 104.0
     }
 
-}
-
-class StockPriceVolMetrics {
-    private long latestTimestamp;
-    private double latestPrice;
-    private double maxPrice;
-    private double minPrice;
-    private long totalVolume;
-    private double cumPriceVolMultiplier;
-
-    public long getLatestTimestamp() {
-        return latestTimestamp;
-    }
-
-    public void setLatestTimestamp(long latestTimestamp) {
-        this.latestTimestamp = latestTimestamp;
-    }
-
-    public double getLatestPrice() {
-        return latestPrice;
-    }
-
-    public void setLatestPrice(double latestPrice) {
-        this.latestPrice = latestPrice;
-    }
-
-    public double getMaxPrice() {
-        return maxPrice;
-    }
-
-    public void setMaxPrice(double maxPrice) {
-        this.maxPrice = maxPrice;
-    }
-
-    public double getMinPrice() {
-        return minPrice;
-    }
-
-    public void setMinPrice(double minPrice) {
-        this.minPrice = minPrice;
-    }
-
-    public long getTotalVolume() {
-        return totalVolume;
-    }
-
-    public void setTotalVolume(long totalVolume) {
-        this.totalVolume = totalVolume;
-    }
-
-    public double getCumPriceVolMultiplier() {
-        return cumPriceVolMultiplier;
-    }
-
-    public void setCumPriceVolMultiplier(double cumPriceVolMultiplier) {
-        this.cumPriceVolMultiplier = cumPriceVolMultiplier;
-    }
 }
