@@ -1,0 +1,46 @@
+----------------------------------------------Day-1------------------------------------------------------------
+What is Java
+Installation of JDK
+Hello World program
+javac to compile and java to run
+object oriented programming concepts - classes and objects
+SOLID principles
+abstraction polymorphism encapsulation
+access specifiers
+----------------------------------------------Day-2------------------------------------------------------------
+keywords - loops and conditional, operator precedence
+Datatypes
+Collections framework
+data structures and algorithms with time complexities
+keywords - static, final, volatile, Atomic
+
+----------------------------------------------Day-3------------------------------------------------------------
+jit compiler
+jvm architecture
+garbage collector
+memory management
+
+----------------------------------------------Day-4------------------------------------------------------------
+iterators
+comparators
+serialization
+
+----------------------------------------------Day-5------------------------------------------------------------
+thread concepts
+synchronized
+locks
+reentrant lock
+semaphore
+Executors
+ThreadPools
+
+----------------------------------------------Day-6------------------------------------------------------------
+annotations
+generics
+reflection
+
+----------------------------------------------Day-7------------------------------------------------------------
+best practices
+problems
+
+---------------------------------------------------------------------------------------------------------------
