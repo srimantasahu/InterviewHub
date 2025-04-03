@@ -5,3 +5,5 @@ Red-Black tree for HashMap
 create a project showcasing amps authentication working in localhost
 create a project showcasing electra
 create a project showcasing gemfire to kafka routing
+create a producer - consumer application
+design a distributed cache - with fault-tolerant and highly scalable

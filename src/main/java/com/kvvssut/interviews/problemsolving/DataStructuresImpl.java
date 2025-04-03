@@ -9,14 +9,19 @@ public class DataStructuresImpl {
         dsi.array();
         dsi.string();
         dsi.list();
+        dsi.map();
+        dsi.set();
         dsi.stack();
         dsi.queue();
         dsi.priorityQueue();
         dsi.tree();
+        dsi.binarySearchTree();
         dsi.redBlackTree();
+        dsi.graph();
+        dsi.trie();
     }
 
-    // 1. Array
+    // Array
     private void array() {
         // Fixed-size array
         int[] array = new int[10];
@@ -31,9 +36,11 @@ public class DataStructuresImpl {
         // array: [0, 0, 0, 0, 5, 0, 0, 0, 0, 0], list: [0, 1]
     }
 
-    // 2. String
+    // String
     private void string() {
+        // Immutable
         String str = "Hello";
+        str = str + " World"; // A new object is created, old one is discarded
 
         // Mutable, fast
         StringBuilder sb = new StringBuilder("Hello");
@@ -44,10 +51,10 @@ public class DataStructuresImpl {
         sbuf.append(" ").append("World").append('!');
 
         System.out.println("String output:\t str: " + str + ", sb: " + sb + ", sbuf: " + sbuf);
-        // str: Hello, sb: Hello World, sbuf: Hello World!
+        // str: Hello World, sb: Hello World, sbuf: Hello World!
     }
 
-    // 3. List (Dynamic Arrays and Linked Lists)
+    // List (Dynamic Arrays and Linked Lists)
     private void list() {
         // Use ArrayList for fast access (random access) to elements and fewer insertions/removals.
         List<Integer> arrayList = new ArrayList<>();
@@ -64,7 +71,49 @@ public class DataStructuresImpl {
         // arrayList: [1, 2], linkedList: [5, 6, 7]
     }
 
-    // 4. Stack (LIFO)
+    // Map
+    private void map() {
+        // HashMap: No order guarantee, fast lookups (O(1))
+        Map<Integer, String> hashMap = new HashMap<>();
+        hashMap.put(3, "C++");
+        hashMap.put(1, "Java");
+        hashMap.put(2, "Python");
+
+        // TreeMap: Sorted by keys (Natural Ordering)
+        Map<Integer, String> treeMap = new TreeMap<>(hashMap);
+
+        // LinkedHashMap: Maintains insertion order
+        Map<Integer, String> linkedHashMap = new LinkedHashMap<>();
+        linkedHashMap.put(3, "C++");
+        linkedHashMap.put(1, "Java");
+        linkedHashMap.put(2, "Python");
+
+        System.out.println("Map output:\t\t hashMap: " + hashMap + ", treeMap: " + treeMap + ", linkedHashMap: " + linkedHashMap);
+        // hashMap: {1=Java, 2=Python, 3=C++}, treeMap: {1=Java, 2=Python, 3=C++}, linkedHashMap: {3=C++, 1=Java, 2=Python}
+    }
+
+    // Set
+    private void set() {
+        // HashSet: Unordered, fast access (O(1)), internally uses a HashMap
+        Set<String> hashSet = new HashSet<>();
+        hashSet.add("Java");
+        hashSet.add("Python");
+        hashSet.add("C++");
+
+        // TreeSet: Sorted order (Natural Ordering)
+        Set<String> treeSet = new TreeSet<>(hashSet);
+
+        // LinkedHashSet: Maintains insertion order
+        Set<String> linkedHashSet = new LinkedHashSet<>();
+        linkedHashSet.add("Java");
+        linkedHashSet.add("Python");
+        linkedHashSet.add("C++");
+
+        System.out.println("Set output:\t\t hashSet: " + hashSet + ", treeSet: " + treeSet + ", linkedHashSet: " + linkedHashSet);
+        // hashSet: [Java, C++, Python], treeSet: [C++, Java, Python], linkedHashSet: [Java, Python, C++]
+    }
+
+    // Stack (LIFO)
     private void stack() {
         // Stack (Legacy API) is a subclass of Vector, which is synchronized and generally slower due to thread safety overhead.
         Stack<Integer> stack = new Stack<>();
@@ -82,7 +131,7 @@ public class DataStructuresImpl {
         // top element: 20, arrayDequeAsStack:  [20, 10]
     }
 
-    // 5. Queue (FIFO)
+    // Queue (FIFO)
     private void queue() {
         // LinkedList uses a doubly linked list, which requires O(1) for enqueue/dequeue but has extra memory overhead (pointers for each node).
         // LinkedList suffers from pointer chasing, which increases cache misses and degrades performance.
@@ -104,7 +153,7 @@ public class DataStructuresImpl {
         // top element: 20, arrayDequeAsQueue: [20, 30]
     }
 
-    // 6. Priority Queue (Heap - MinHeap by default)
+    // Priority Queue (Heap - MinHeap by default)
     private void priorityQueue() {
         PriorityQueue<Integer> priorityQueueAsMinHeap = new PriorityQueue<>(); // Min-Heap
         // Adding elements
@@ -121,8 +170,8 @@ public class DataStructuresImpl {
         // top element: 10, priorityQueueAsMinHeap: [10, 30, 20]
     }
 
-    // 7. Trees (Binary Tree, BST, AVL, ...)
-    class TreeNode<T> {
+    // Trees (Binary Tree, BST, AVL, ...)
+    static class TreeNode<T> {
         T data;
         TreeNode<T> left, right;
 
@@ -131,7 +180,8 @@ public class DataStructuresImpl {
             this.left = this.right = null;
         }
     }
-    class BinaryTree<T> {
+
+    static class BinaryTree<T> {
         TreeNode<T> root;
 
         public BinaryTree(T rootData) {
@@ -178,6 +228,7 @@ public class DataStructuresImpl {
             }
         }
     }
+
     private void tree() {
         // Create a binary tree
         BinaryTree<Integer> tree = new BinaryTree<>(1);
@@ -195,7 +246,62 @@ public class DataStructuresImpl {
         // level order traversal: 1 2 3 4 5 6 7
     }
 
-    // 8. Red-Black Tree (Balanced BST)
+    // Binary Search Tree (BST)
+    static class BinarySearchTree {
+        private TreeNode<Integer> root;
+
+        public void insert(int key) {
+            root = insertElement(root, key);
+        }
+
+        private TreeNode<Integer> insertElement(TreeNode<Integer> root, int key) {
+            if (root == null) return new TreeNode<>(key);
+            if (key < root.data) root.left = insertElement(root.left, key);
+            else if (key > root.data) root.right = insertElement(root.right, key);
+            return root;
+        }
+
+        public boolean search(int key) {
+            return searchElement(root, key);
+        }
+
+        private boolean searchElement(TreeNode<Integer> root, int key) {
+            if (root == null) return false;
+            if (key == root.data) return true;
+            return key < root.data ? searchElement(root.left, key) : searchElement(root.right, key);
+        }
+
+        public void inorder() {
+            inorderTraversal(root);
+        }
+
+        private void inorderTraversal(TreeNode<Integer> root) {
+            if (root != null) {
+                inorderTraversal(root.left);
+                System.out.print(root.data + " ");
+                inorderTraversal(root.right);
+            }
+        }
+    }
+
+    private void binarySearchTree() {
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.insert(5);
+        bst.insert(3);
+        bst.insert(9);
+        bst.insert(2);
+        bst.insert(4);
+        bst.insert(6);
+        bst.insert(8);
+
+        // Displaying the BST (keys are sorted)
+        System.out.print("BST output:\t\t search 4: " + bst.search(4) + ", search 7: " + bst.search(7) + ", in-order traversal: ");
+        bst.inorder();
+        System.out.println();
+        // search 4: true, search 7: false, in-order traversal: 2 3 4 5 6 8 9
+    }
+
+    // Red-Black Tree (Balanced BST)
     private void redBlackTree() {
         // A TreeMap in Java is a sorted map implementation based on a Red-Black Tree.
         // It maintains keys in sorted order and provides O(log n) time complexity for insertion, deletion, and lookup.
@@ -212,8 +318,121 @@ public class DataStructuresImpl {
         Map<Integer, String> descTreeMap = new TreeMap<>(Comparator.reverseOrder()); // keys sorted in descending order
 
         // Displaying the TreeMap (keys are sorted)
-        System.out.println("RedBlack Tree:\t first key: " + treeMap.firstKey() + ", last key: " + treeMap.lastKey() + ", treeMap: " + treeMap);
+        System.out.println("RedBlackTree:\t first key: " + treeMap.firstKey() + ", last key: " + treeMap.lastKey() + ", treeMap: " + treeMap);
         // first key: 1, last key: 5, treeMap: {1=One, 3=Three, 4=Four, 5=Five}
+    }
+
+    // Graph (Adjacency List)
+    static class Graph {
+        private final Map<Integer, List<Integer>> adjList;
+
+        public Graph() {
+            this.adjList = new HashMap<>();
+        }
+
+        // Add a vertex
+        public void addVertex(int vertex) {
+            adjList.putIfAbsent(vertex, new ArrayList<>());
+        }
+
+        // Add an edge (undirected)
+        public void addEdge(int src, int dest) {
+            adjList.putIfAbsent(src, new ArrayList<>());
+            adjList.putIfAbsent(dest, new ArrayList<>());
+            adjList.get(src).add(dest);
+            adjList.get(dest).add(src);
+        }
+
+        // Print the graph
+        public void printGraph() {
+            for (var entry : adjList.entrySet()) {
+                System.out.print(entry.getKey() + " -> " + entry.getValue() + "; ");
+            }
+        }
+    }
+
+    private void graph() {
+        Graph graph = new Graph();
+        graph.addVertex(1);
+        graph.addVertex(2);
+        graph.addVertex(3);
+        graph.addVertex(4);
+        graph.addEdge(1, 2);
+        graph.addEdge(2, 3);
+        graph.addEdge(3, 4);
+        graph.addEdge(4, 1);
+
+        // Displaying the Graph
+        System.out.print("Graph output:\t ");
+        graph.printGraph();
+        System.out.println();
+        // 1 -> [2, 4]; 2 -> [1, 3]; 3 -> [2, 4]; 4 -> [3, 1];
+    }
+
+    // Trie (Prefix Tree)
+    static class TrieNode {
+        Map<Character, TrieNode> children = new HashMap<>();
+        boolean endOfWord;
+
+        public TrieNode() {
+            this.endOfWord = false;
+        }
+    }
+
+    static class Trie {
+        private final TrieNode root;
+
+        public Trie() {
+            root = new TrieNode();
+        }
+
+        // Insert a word into the trie
+        public void insert(String word) {
+            TrieNode node = root;
+            for (char ch : word.toCharArray()) {
+                node.children.putIfAbsent(ch, new TrieNode());
+                node = node.children.get(ch);
+            }
+            node.endOfWord = true;
+        }
+
+        // Search for a word in the trie
+        public boolean search(String word) {
+            TrieNode node = root;
+            for (char ch : word.toCharArray()) {
+                if (!node.children.containsKey(ch)) {
+                    return false;
+                }
+                node = node.children.get(ch);
+            }
+            return node.endOfWord;
+        }
+
+        // Check if a prefix exists in the trie
+        public boolean startsWith(String prefix) {
+            TrieNode node = root;
+            for (char ch : prefix.toCharArray()) {
+                if (!node.children.containsKey(ch)) {
+                    return false;
+                }
+                node = node.children.get(ch);
+            }
+            return true;
+        }
+    }
+
+    private void trie() {
+        Trie trie = new Trie();
+        trie.insert("apple");
+        trie.insert("app");
+        trie.insert("application");
+
+        System.out.println("Trie output:\t " +
+                           "search 'apple': " + trie.search("apple") +
+                           ", search 'app': " + trie.search("app") +
+                           ", search 'appl': " + trie.search("appl") +
+                           ", starts with 'app': " + trie.startsWith("app"));
+        // search 'apple': true, search 'app': true, search 'appl': false, starts with 'app': true
     }
 
 }
