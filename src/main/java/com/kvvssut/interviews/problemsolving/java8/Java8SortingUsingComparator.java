@@ -1,4 +1,4 @@
-package com.kvvssut.interviews.problemsolving.java;
+package com.kvvssut.interviews.problemsolving.java8;
 
 import java.util.ArrayList;
 import java.util.Comparator;

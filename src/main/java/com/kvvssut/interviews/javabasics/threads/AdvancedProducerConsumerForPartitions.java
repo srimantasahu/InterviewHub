@@ -1,4 +1,4 @@
-package com.kvvssut.interviews.problemsolving.java;
+package com.kvvssut.interviews.javabasics.threads;
 
 import java.util.HashMap;
 import java.util.Map;
