@@ -507,17 +507,17 @@ public class ThreadsImpl {
     }
 
     static class Worker {
-        private volatile boolean running = true;  // visible across threads
+        private volatile boolean isRunning = true;  // visible across threads
 
         public void run() {
             System.out.println(Thread.currentThread().getName() + ": started.");
-            while (running) { /* simulate some work */ }
-            // stops when running=false (reads from main memory)
+            while (isRunning) { /* simulate some work */ }
+            // stops when isRunning=false (reads from main memory)
             System.out.println(Thread.currentThread().getName() + ": stopped.");
         }
 
         public void stopRunning() {
-            running = false;
+            isRunning = false;
         }
     }
 
