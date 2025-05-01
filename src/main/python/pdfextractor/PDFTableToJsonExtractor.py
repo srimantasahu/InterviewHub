@@ -16,16 +16,45 @@ python3 -c "import pdfplumber; print('pdfplumber is installed successfully')"
 """
 
 import pdfplumber
+import json
+
+all_rows = []
 
 with pdfplumber.open("/Users/srimantasahu/Downloads/HPE_dp00003542en_us_Gen11.pdf") as pdf:
-    for page in pdf.pages:
+    headers = ['Product Category', 'Description', 'Build#', 'Version', 'Upgrade Requirement', 'Filename', 'Release Status']
+    for page_num, page in enumerate(pdf.pages, start=1):
         tables = page.extract_tables()
-        for table in tables:
-            print("--------------------------------------------------- table ---------------------------------------------------")
-            for row in table:
-                print(row)
-                # for col in row:
-                #     print(col)
+
+        for table_num, table in enumerate(tables, start=1):
+            if not table:
+                continue
+
+            for row in table[1:]:
+                if row[0] is None or str(row[0]).strip() == "":
+                    continue  # Skip blank/empty rows
+
+                row_dict = {}
+                j = 0  # index for headers
+
+                for i in range(len(row)):
+                    value = row[i]
+                    if value is not None and str(value).strip() != '':
+                        clean_value = str(value).replace('\n', ' ').strip()
+                        if j < len(headers):
+                            row_dict[headers[j]] = clean_value
+                        j += 1
+
+                all_rows.append(row_dict)
+
+# Convert to JSON
+json_output = json.dumps(all_rows, indent=2, ensure_ascii=False)
+
+# Save to a file (optional)
+with open("output.json", "w", encoding="utf-8") as f:
+    f.write(json_output)
+
+# Print JSON
+print(json_output)
 
 
 """
