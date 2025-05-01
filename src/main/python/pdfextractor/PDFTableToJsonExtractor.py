@@ -15,47 +15,75 @@ python3 -c "import pdfplumber; print('pdfplumber is installed successfully')"
 
 """
 
+from pathlib import Path
+
 import pdfplumber
 import json
 
-all_rows = []
+file = "/Users/srimantasahu/Downloads/hp3542en_us_gen11.pdf"
+headers = ['Product Category', 'Description', 'Build#', 'Version', 'Upgrade Requirement', 'Filename', 'Release Status']
+special_headers = ['Version', 'Filename']
 
-with pdfplumber.open("/Users/srimantasahu/Downloads/HPE_dp00003542en_us_Gen11.pdf") as pdf:
-    headers = ['Product Category', 'Description', 'Build#', 'Version', 'Upgrade Requirement', 'Filename', 'Release Status']
-    for page_num, page in enumerate(pdf.pages, start=1):
+all_rows = []
+previous_row = None
+
+def is_likely_continuation(row):
+    return str(row[0]).strip() == ""
+
+with pdfplumber.open(file) as pdf:
+    for page_num, page in enumerate(pdf.pages):
         tables = page.extract_tables()
 
-        for table_num, table in enumerate(tables, start=1):
-            if not table:
+        for table in tables:
+            if not table or len(table) < 2:
                 continue
 
-            for row in table[1:]:
-                if row[0] is None or str(row[0]).strip() == "":
-                    continue  # Skip blank/empty rows
+            for i, row in enumerate(table):
+                if all(cell is None or str(cell).strip() == "" for cell in row):
+                    continue    # skip empty rows
 
                 row_dict = {}
                 j = 0  # index for headers
 
-                for i in range(len(row)):
-                    value = row[i]
-                    if value is not None and str(value).strip() != '':
-                        clean_value = str(value).replace('\n', ' ').strip()
+                for k in range(len(row)):
+                    value = row[k]
+                    if value is not None:
                         if j < len(headers):
-                            row_dict[headers[j]] = clean_value
+                            if headers[j] in special_headers:
+                                row_dict[headers[j]] = str(value).replace('\n', '').strip()
+                            else :
+                                row_dict[headers[j]] = str(value).replace('\n', ' ').strip()
                         j += 1
 
-                all_rows.append(row_dict)
+                # Check and merge if continuation of previous page
+                if i == 0 and previous_row and is_likely_continuation(row):
+                    for key, value in row_dict.items():
+                        if value:
+                            old_val = previous_row.get(key, "")
+                            if value not in old_val:
+                                if key in special_headers:
+                                    previous_row[key] = f"{old_val}{value}".strip()
+                                else :
+                                    previous_row[key] = f"{old_val} {value}".strip()
+                    continue  # Don't add as new row
+                else:
+                    all_rows.append(row_dict)
+                    previous_row = row_dict
+
+if all_rows:
+    all_rows = all_rows[2:]  # Remove the first entry for headers
 
 # Convert to JSON
 json_output = json.dumps(all_rows, indent=2, ensure_ascii=False)
 
 # Save to a file (optional)
-with open("output.json", "w", encoding="utf-8") as f:
+path = Path('/Users/srimantasahu/Downloads/hp3542en_us_gen11.pdf')
+filename_without_ext = path.stem
+with open(filename_without_ext + ".json", "w", encoding="utf-8") as f:
     f.write(json_output)
 
 # Print JSON
 print(json_output)
-
 
 """
 --------------------------------------------------- table ---------------------------------------------------
@@ -92,4 +120,35 @@ print(json_output)
 ['Driver -\nNetwork', 'Intel iavf Driver\nfor Windows\nServer 2019', '6', '1.13.8.0\n(C)', 'Recommended', 'cp054095.exe', 'new']
 ['Driver -\nNetwork', 'HPE Broadcom tg3\nEthernet Drivers\nfor Red Hat\nEnterprise Linux 9', '6', '3.139j-1\n(B)', 'Recommended', 'kmod-tg3-\n3.139j-\n1.rhel9u1.x86_6\n4.rpm\nkmod-tg3-\n3.139j-\n1.5.14.0.70.22.1\n.rhel9u0.x86_64\n.rpm', 'new']
 ['Driver -\nNetwork', 'HPE Mellanox\nRoCE (RDMA\nover Converged\nEthernet)\nConnectX-4,\nConnectX-5 and\nConnectX-6 Driver\nfor Red Hat\nEnterprise Linux 8\nUpdate 7 (x86_64)', '2', '23.04-\n1.1.3.1', 'Recommended', 'kmod-mlnx-\nofa_kernel-\n23.04-\nOFED.23.04.1.1.\n3.1.2023060806\n41.rhel8u7.x86_\n64.rpm\nmlnx-\nofa_kernel-\n23.04-\nOFED.23.04.1.1.', 'new']
+"""
+"""
+[
+  {
+    "Product Category": "Application - System Management",
+    "Description": "Integrated Smart Update Tools 4.5.0 for ESXi 7.0",
+    "Build#": "14",
+    "Version": "2023.09.00",
+    "Upgrade Requirement": "Recommended",
+    "Filename": "cp057456.zip",
+    "Release Status": "new"
+  },
+  {
+    "Product Category": "Application - System Management",
+    "Description": "Integrated Smart Update Tools for Windows x64",
+    "Build#": "7",
+    "Version": "4.5.0.0",
+    "Upgrade Requirement": "Recommended",
+    "Filename": "cp057442.exe",
+    "Release Status": "update"
+  },
+  {
+    "Product Category": "Application - System Management",
+    "Description": "Integrated Smart Update Tools 4.5.0 for ESXi 8.0",
+    "Build#": "27",
+    "Version": "2023.09.00",
+    "Upgrade Requirement": "Recommended",
+    "Filename": "cp057459.zip",
+    "Release Status": "new"
+  }
+]
 """
