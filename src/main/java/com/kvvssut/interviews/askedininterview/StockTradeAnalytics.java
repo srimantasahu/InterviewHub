@@ -1,4 +1,4 @@
-package com.kvvssut.interviews.problemsolving.askedininterview;
+package com.kvvssut.interviews.askedininterview;
 
 /*
     Given a list of stock's (timestamp, stock, price, vol) info, find out latest price, max price, min price, total volume, VWAP.
