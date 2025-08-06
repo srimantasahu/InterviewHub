@@ -7,3 +7,28 @@ create a project showcasing electra
 create a project showcasing gemfire to kafka routing
 create a producer - consumer application
 design a distributed cache - with fault-tolerant and highly scalable
+
+-----------------------------------------------------------------------------------------------------------------
+Problems to solve for java interviews
+
+-- rate-limiter implementation
+-- lru cache
+-- producer-consumer and using blocking queue
+-- thread safe implementation of singleton pattern
+-- executor service with first n completed tasks
+-- design a threadpool executor without using executorservice
+-- debouncer implementation
+-- idempotent implementation
+-- deadlock detection implementation
+-- in memory key expiry cache implementation
+-- multithreaded large file lines counter implementation
+-- design blocking queue
+-- completablefuture.allOf usage
+-- object pooling implementation
+-- bloom filter implementation
+-- sliding window maximum
+-- lfu cache
+-- implement realtime metrics collector
+-- implement custom hashmap
+-- implement threadsafe logger
+
