@@ -1,0 +1,20 @@
+[
+  {
+    "Product Category": "Application - System Management",
+    "Description": "Integrated Smart Update Tools 4.5.9 for ESXi 7.9",
+    "Build#": "141",
+    "Version": "2023.09.09",
+    "Upgrade Requirement": "Recommended",
+    "Filename": "bcp057456789.zip",
+    "Release Status": "new"
+  },
+  {
+    "Product Category": "Application - System Management",
+    "Description": "Integrated Smart Update Tools for Windows x64",
+    "Build#": "72",
+    "Version": "4.5.0.09",
+    "Upgrade Requirement": "Recommended",
+    "Filename": "bcp05744212345.exe",
+    "Release Status": "update"
+  }
+]

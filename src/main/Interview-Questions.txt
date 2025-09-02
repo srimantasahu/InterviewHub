@@ -11,6 +11,8 @@ design a distributed cache - with fault-tolerant and highly scalable
 -----------------------------------------------------------------------------------------------------------------
 Problems to solve for java interviews
 
+-- JVM internals
+-- garbage collection tuning
 -- lru cache
 -- producer-consumer and using blocking queue
 -- thread safe implementation of singleton pattern

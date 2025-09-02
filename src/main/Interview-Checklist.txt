@@ -8,8 +8,36 @@ Revise SQL: joins, aggregate functions, row_number, dense_rank
 Revise PL/SQL: functions, procedures, triggers, dbms locks, rollback, commit
 Revise Multithreading & Concurrency topics: synchronized, Atomic datatypes, volatile, Reenterant locks, Semaphore, Mutex,  Futures, CompletableFutures, Executors, ThreadPoolExecutor
 Revise Java Operator precedence and bit manipulation operations
-Revise basic design coding problems: consumer-producer, Deadlock, FIFOCache, LRUCache
-Revise solved LeetCode solutions from the list: https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms
+Revise coding problems:
+    best time to buy-sell stock,
+    coin change,
+    climbing stairs,
+    combination sum,
+    search-insert position,
+    kth-largest-ele in a stream,
+    word ladder,
+    jump game,
+    num connected comps in graph,
+    path exists in graph,
+    closest binary search tree val,
+    bfs deepest leaves sum,
+    diameter of binary tree,
+    max depth of BT,
+    stock spanner,
+    moving average from stream,
+    reverse linked list with frequency,
+    longest substring without repeating chars,
+    contiguous array,
+    largest uniques number,
+    missing number in range,
+    prefix sum,
+    max consecutive ones III,
+    maximum average subarray,
+Revise design coding problems: consumer-producer, Deadlock, FIFOCache, LRUCache, RateLimiter, ExecutionCompletionService, trie implementation
+Revise solved LeetCode solutions from the list:
+https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/713/interviews-and-tools/4545/
+https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/713/interviews-and-tools/4547/
+https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms
 -----------------------------------------------------------------------------------------Java Round---------------------------------------------------------------------------------------------------------
 Revise Java Datatypes sizes for boolean, int, char, float, double, list, map - empty constructor vs initial size
 Revise Java versions feature updates
@@ -30,7 +58,7 @@ Revise Java Code Vulnerabilities: XXS attack, men in the middle attack, object m
 >>Revise Electra Architectural Design
 Remember computing terminologies by heart: low latency, high throughput, high frequency, fault-tolerant, multi-tenant, platform-agnostic, write-once-run-anywhere (WORA)
 Database selections criteria: SQL vs NOSQL
-Revise Design Concepts: CAP theorem, SOLID principles, ACID principles, DB Normalizations forms, sharding, fragmentation, how to optimize searching using indexes and etc
+Revise Design Concepts: CAP theorem, SOLID principles, ACID principles, UML diagrams notations, DB Normalizations forms, sharding, fragmentation, how to optimize searching using indexes and etc
 Revise Design implementation steps for Monolith to microservices: breakdown with individual schema per service or shared for co-related ones
 >>Revise System Design problems: rate limiter, key-value store, unique-id generator, url shortener, web crawler, notification service, chat system
 -----------------------------------------------------------------------------------------Miscellaneous Topics---------------------------------------------------------------------------------------------------------
