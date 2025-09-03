@@ -1,16 +1,24 @@
-package com.kvvssut.interviews.design;
+package com.kvvssut.interviews.mustb4interview;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * LRU Cache using LinkedHashMap.
+ * Access order is maintained, so least recently used entries
+ * are evicted automatically when capacity is exceeded.
+ */
 public class LRUCacheUsingLinkedHashMap<K, V> {
     private final int capacity;
-    private final LinkedHashMap<K, V> cache;
+    private final Map<K, V> cache;
 
     public LRUCacheUsingLinkedHashMap(int capacity) {
+        if (capacity <= 0) {
+            throw new IllegalArgumentException("Capacity must be greater than 0");
+        }
         this.capacity = capacity;
 
-        // true enables access order for LinkedHashMap
+        // true = accessOrder (otherwise insertionOrder)
         this.cache = new LinkedHashMap<>(capacity, 0.75f, true) {
             @Override
             protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
@@ -19,15 +27,28 @@ public class LRUCacheUsingLinkedHashMap<K, V> {
         };
     }
 
-    public V get(K key) {
-        return cache.getOrDefault(key, null);
+    /** Returns the value for the key, or null if not present. */
+    public synchronized V get(K key) {
+        return cache.get(key);
     }
 
-    public void put(K key, V value) {
+    /** Inserts/updates a key-value pair. */
+    public synchronized void put(K key, V value) {
         cache.put(key, value);
     }
 
-    public void printCache() {
+    /** Returns current cache size. */
+    public synchronized int size() {
+        return cache.size();
+    }
+
+    /** Clears all entries. */
+    public synchronized void clear() {
+        cache.clear();
+    }
+
+    /** Prints the current cache state. */
+    public synchronized void printCache() {
         System.out.println(cache);
     }
 
