@@ -17,12 +17,12 @@ public class FunctionalInterfacesDemo {
 
     @FunctionalInterface
     interface SimpleFunctionalInterface {
-        public void doSomething();
+        void doSomething();
     }
 
     @FunctionalInterface
     interface FunctionalInterfaceWithArgs {
-        public void doSomething(String str1, String str2);
+        void doSomething(String str1, String str2);
     }
 
 }

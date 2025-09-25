@@ -8,12 +8,12 @@ import java.util.function.Predicate;
 
 @FunctionalInterface
 interface SimpleFunctionalInterface {
-    public void doSomething();
+    void doSomething();
 }
 
 @FunctionalInterface
 interface ComplexFunctionalInterfaceWithArguments {
-    public void addName(String firstname, String lastname);
+    void addName(String firstname, String lastname);
 }
 
 interface PersonInterface {
@@ -24,13 +24,13 @@ interface PersonInterface {
         return "Person [name=" + person.getName() + ", age=" + person.getAge() + "]";
     }
 
-    public String getName();
+    String getName();
 
-    public void setName(String name);
+    void setName(String name);
 
-    public int getAge();
+    int getAge();
 
-    public void setAge(int age);
+    void setAge(int age);
 
     /*
      * Java 8 default methods -
@@ -92,7 +92,6 @@ public class LambdaExpressions {
                 System.out.println("\nAnonymous Way - doesn't create a class!");
             }
         }, "anonymousWayThread").start();
-        ;
 
         /*
          * Using Lambda Expressions below -

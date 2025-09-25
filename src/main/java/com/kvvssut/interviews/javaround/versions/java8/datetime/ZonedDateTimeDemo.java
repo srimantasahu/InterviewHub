@@ -30,9 +30,8 @@ public class ZonedDateTimeDemo {
         Optional<String> zone = zones.stream().filter(str -> str.contains("Dubai")).findFirst();
         if (zone.isPresent()) {
             ZonedDateTime dubai = ZonedDateTime.now(ZoneId.of(zone.get()));
-            System.out.println(
-                    String.format("\nDubai zone's string is : %s \nCurrent Dubai date and time in SHORT format is : %s",
-                            zone, dtf.format(dubai)));
+            System.out.printf("\nDubai zone's string is : %s \nCurrent Dubai date and time in SHORT format is : %s%n",
+                    zone, dtf.format(dubai));
         } else {
             System.out.println("Timezone not found!");
         }
