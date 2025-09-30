@@ -24,10 +24,10 @@ edges[i].length == 2
 ai != bi
 There are no repeated edges.
  */
-public class ConnectedComponents {
+public class ConnectedComponentsInGraph {
 
     public static void main(String[] args) {
-        ConnectedComponents obj = new ConnectedComponents();
+        ConnectedComponentsInGraph obj = new ConnectedComponentsInGraph();
         System.out.println(obj.countComponents(5, new int[][]{{0, 1}, {1, 2}, {3, 4}}));    // output: 2
         System.out.println(obj.countComponents(5, new int[][]{{0, 1}, {1, 2}, {2, 3}, {3, 4}}));    // output: 1
     }
