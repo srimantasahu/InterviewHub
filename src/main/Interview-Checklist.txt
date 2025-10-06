@@ -9,30 +9,10 @@ Revise PL/SQL: functions, procedures, triggers, dbms locks, rollback, commit
 Revise Multithreading & Concurrency topics: synchronized, Atomic datatypes, volatile, Reenterant locks, Semaphore, Mutex,  Futures, CompletableFutures, Executors, ThreadPoolExecutor
 Revise Java Operator precedence and bit manipulation operations
 Revise coding problems:
-    best time to buy-sell stock,
-    coin change,
-    climbing stairs,
-    combination sum,
-    search-insert position,
-    kth-largest-ele in a stream,
-    word ladder,
-    jump game,
-    num connected comps in graph,
-    path exists in graph,
-    diameter of binary tree,
->>  closest binary search tree val,
-    bfs deepest leaves sum,
-    max depth of BT,
-    stock spanner,
-    moving average from stream,
-    reverse linked list with frequency,
-    longest substring without repeating chars,
-    contiguous array,
-    largest uniques number,
-    missing number in range,
-    prefix sum,
-    max consecutive ones III,
-    maximum average subarray,
+best time to buy-sell stock, coin change, climbing stairs, combination sum, search-insert position, kth-largest-ele in a stream, word ladder, jump game,
+num connected comps in graph, path exists in graph, diameter of binary tree, reverse linked list with frequency,
+>>  cheapest flights within k stops, network delay time, closest binary search tree val, bfs deepest leaves sum, max depth of BT, stock spanner,
+moving average from stream, longest substring without repeating chars, contiguous array, largest uniques number, missing number in range, prefix sum, max consecutive ones III
 Revise design coding problems: consumer-producer, Deadlock, FIFOCache, LRUCache, RateLimiter, ExecutionCompletionService, trie implementation
 Revise solved LeetCode solutions from the list:
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/713/interviews-and-tools/4545/
