@@ -12,7 +12,7 @@
     <modules>
         <module>interview-prep</module>
         <module>order-execution-service</module>
-        <module>realtime-data-processing</module>
+        <module>realtime-pnl-calculator</module>
         <module>reconciliation-system</module>
         <module>rock-paper-scissor</module>
     </modules>

@@ -7,7 +7,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>realtime-data-processing</artifactId>
+    <artifactId>realtime-pnl-calculator</artifactId>
     <packaging>jar</packaging>
 
     <name>realtime-data-processing</name>
