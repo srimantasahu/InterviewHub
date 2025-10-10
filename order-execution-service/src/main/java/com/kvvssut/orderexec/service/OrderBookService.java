@@ -5,6 +5,7 @@ import com.kvvssut.orderexec.bean.Side;
 import com.kvvssut.orderexec.bean.Trade;
 import com.kvvssut.orderexec.repository.OrderBook;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 public class OrderBookService {
@@ -19,10 +20,10 @@ public class OrderBookService {
         Side otherSide = side == Side.BUY ? Side.SELL : Side.BUY;
 
         synchronized (orderBook) {
-            TreeMap<Double, Deque<Order>> sideOrders = orderBook.getOrders(side);
-            TreeMap<Double, Deque<Order>> otherSideOrders = orderBook.getOrders(otherSide);
+            TreeMap<BigDecimal, Deque<Order>> sideOrders = orderBook.getOrders(side);
+            TreeMap<BigDecimal, Deque<Order>> otherSideOrders = orderBook.getOrders(otherSide);
 
-            double price = order.price();
+            BigDecimal price = order.price();
             int qty = order.quantity();
 
             if (otherSideOrders.isEmpty() || isPriceOutOfBound(side, price, otherSideOrders.firstKey())) {
@@ -34,8 +35,8 @@ public class OrderBookService {
                         return;
                     }
 
-                    Map.Entry<Double, Deque<Order>> entry = otherSideOrders.pollFirstEntry();
-                    double otherPrice = entry.getKey();
+                    Map.Entry<BigDecimal, Deque<Order>> entry = otherSideOrders.pollFirstEntry();
+                    BigDecimal otherPrice = entry.getKey();
                     Deque<Order> queue = entry.getValue();
 
                     while (!queue.isEmpty()) {
@@ -77,7 +78,7 @@ public class OrderBookService {
         return side == Side.SELL ? order.orderId() : otherOrder.orderId();
     }
 
-    private void addOrderToBook(Order order, TreeMap<Double, Deque<Order>> sideOrders) {
+    private void addOrderToBook(Order order, TreeMap<BigDecimal, Deque<Order>> sideOrders) {
         if (!sideOrders.containsKey(order.price())) {
             Deque<Order> queue = new ArrayDeque<>();
             queue.add(order);
@@ -87,8 +88,8 @@ public class OrderBookService {
         }
     }
 
-    private boolean isPriceOutOfBound(Side side, double price, double otherPrice) {
-        return side == Side.BUY ? price < otherPrice : price > otherPrice;
+    private boolean isPriceOutOfBound(Side side, BigDecimal price, BigDecimal otherPrice) {
+        return side == Side.BUY ? price.compareTo(otherPrice) < 0 : price.compareTo(otherPrice) > 0;    //   price < otherPrice : price > otherPrice;
     }
 
     public void printTrades() {
@@ -104,7 +105,7 @@ public class OrderBookService {
 
         for (Side side : Side.values()) {
             System.out.println(side);
-            TreeMap<Double, Deque<Order>> orders = orderBook.getOrders(side);
+            TreeMap<BigDecimal, Deque<Order>> orders = orderBook.getOrders(side);
             orders.entrySet().forEach(System.out::println);
         }
     }

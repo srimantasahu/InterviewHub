@@ -3,7 +3,10 @@ package com.kvvssut.orderexec.helper;
 import com.kvvssut.orderexec.bean.Order;
 import com.kvvssut.orderexec.bean.Side;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
+
+import static com.kvvssut.orderexec.util.CommonUtil.parseBigDecimal;
 
 public class OrderParser {
 
@@ -22,7 +25,7 @@ public class OrderParser {
         try {
             Side side = Side.valueOf(values[SIDE_COLUMN_IDX].trim());
 
-            return new Order(values[0].trim(), side, Double.parseDouble(values[2].trim()), Integer.parseInt(values[3].trim()), Long.parseLong(values[4].trim()));
+            return new Order(values[0].trim(), side, parseBigDecimal(values[2].trim()), Integer.parseInt(values[3].trim()), Long.parseLong(values[4].trim()));
         } catch (Exception e) {
             System.out.println("Invalid order values: " + Arrays.toString(values));
         }

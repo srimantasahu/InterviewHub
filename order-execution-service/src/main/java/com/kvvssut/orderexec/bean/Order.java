@@ -1,4 +1,6 @@
 package com.kvvssut.orderexec.bean;
 
-public record Order(String orderId, Side side, double price, int quantity, long timestamp) {
+import java.math.BigDecimal;
+
+public record Order(String orderId, Side side, BigDecimal price, int quantity, long timestamp) {
 }
