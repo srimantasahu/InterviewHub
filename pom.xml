@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>interview-prep</module>
+        <module>interview-preparation</module>
         <module>order-execution-service</module>
         <module>realtime-pnl-calculator</module>
         <module>reconciliation-system</module>
