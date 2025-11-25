@@ -1,21 +1,23 @@
 package com.kvvssut.interviews.codinground.java;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * Example program where multiple threads print numbers alternately.
- * Each thread takes its turn based on thread ID.
+ * Demonstrates N threads printing numbers sequentially in round-robin order.
+ * Example: 4 threads → Thread-0 prints 1, Thread-1 prints 2, Thread-2 prints 3, Thread-3 prints 4, then repeat.
  */
 public class NThreadsSequential {
     public static void main(String[] args) throws InterruptedException {
-        int numThreads = 4;  // Number of threads
-        int maxCount = numThreads * 10;   // Total numbers to print across all threads
+        int numThreads = 4;                 // Number of threads to run
+        int maxCount = numThreads * 10;     // Total numbers to print (each thread prints 10 times)
 
-        // Shared task across all threads
         PrintTask task = new PrintTask(numThreads, maxCount);
 
-        // Create and start threads
         Thread[] threads = new Thread[numThreads];
+
+        // Create and start threads
         for (int i = 0; i < numThreads; i++) {
             threads[i] = new Thread(task, "Thread-" + i);
             threads[i].start();
@@ -25,17 +27,22 @@ public class NThreadsSequential {
         for (Thread t : threads) {
             t.join();
         }
+
+        System.out.println("All threads completed successfully.");
     }
 }
 
 /**
- * Runnable task that ensures threads print numbers alternately.
+ * Shared runnable that coordinates threads to print numbers sequentially using a ReentrantLock and Condition.
  */
 class PrintTask implements Runnable {
-    private final Object lock = new Object(); // Common lock for synchronization
+
+    private final ReentrantLock lock = new ReentrantLock();   // Explicit lock (better control than synchronized)
+    private final Condition condition = lock.newCondition();  // Used to coordinate turn-based printing
+
     private final int numThreads;             // Total number of threads
     private final int maxCount;               // Maximum number to print
-    private final AtomicInteger counter = new AtomicInteger(0); // Shared counter
+    private final AtomicInteger counter = new AtomicInteger(0);  // Shared atomic counter
 
     public PrintTask(int numThreads, int maxCount) {
         this.numThreads = numThreads;
@@ -44,33 +51,36 @@ class PrintTask implements Runnable {
 
     @Override
     public void run() {
-        // Extract thread ID from its name (Thread-0 → 0, Thread-1 → 1, etc.)
+        // Extract numeric ID from thread name: e.g., Thread-2 → 2
         int threadId = Integer.parseInt(Thread.currentThread().getName().split("-")[1]);
 
         while (true) {
-            synchronized (lock) {
-                // Wait until it's this thread's turn OR counter has reached the limit
+            lock.lock();  // Acquire lock before checking/updating shared state
+            try {
+                // Wait while it's not this thread's turn AND work is not done
                 while (counter.get() < maxCount && counter.get() % numThreads != threadId) {
-                    try {
-                        lock.wait(); // Release lock and wait for notification
-                    } catch (InterruptedException e) {
-                        Thread.currentThread().interrupt(); // Restore interrupt flag
-                        return; // Exit gracefully
-                    }
+                    condition.await();  // Release lock and wait to be signaled
                 }
 
-                // If max count is reached, wake up others and exit
+                // Exit condition: once maxCount is reached, wake up others and break
                 if (counter.get() >= maxCount) {
-                    lock.notifyAll();
+                    condition.signalAll(); // Wake up any waiting threads to let them exit
                     break;
                 }
 
-                // Increment and print the number
+                // Increment counter and print
                 int value = counter.incrementAndGet();
                 System.out.println(Thread.currentThread().getName() + " prints: " + value);
 
-                // Notify other waiting threads
-                lock.notifyAll();
+                // Signal all other waiting threads that state has changed
+                condition.signalAll();
+
+            } catch (InterruptedException e) {
+                // Handle thread interruption gracefully
+                Thread.currentThread().interrupt();
+                break;
+            } finally {
+                lock.unlock();  // Always release lock in finally block
             }
         }
     }
